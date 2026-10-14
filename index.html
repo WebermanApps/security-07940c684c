@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="light"><title>Security Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Khand:wght@700&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf8f1;--card:#fff;--fg:#0a0a0a;--pri:#171717;--mut:#737373;--bd:#e5e5e5;--blue:#155dfc;--green:#16a34a;--amber:#d97706;--r:.75rem;--ease:cubic-bezier(.2,.8,.2,1);--dur:180ms}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 "Hind",system-ui,sans-serif}
+h1,h2,h3{font-family:"Khand",sans-serif;font-weight:700;line-height:1.1;margin:0}
+h1{font-size:2.6rem}h2{font-size:1.6rem;margin:2rem 0 .75rem}h3{font-size:1.2rem}
+.wrap{max-width:1100px;margin:0 auto;padding:1.25rem}
+.label{text-transform:uppercase;letter-spacing:.1em;font-size:.75rem;color:var(--mut);font-weight:600}
+.grid{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{display:flex;gap:.75rem;align-items:flex-start;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:1rem;min-height:44px;color:inherit;text-decoration:none}
+a.card{cursor:pointer}.card p{margin:.2rem 0 0;color:var(--mut);font-size:.95rem}
+.ic{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:#f5f5f5}
+.ic svg{width:18px;height:18px;fill:none;stroke:var(--pri);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--green);margin-right:.4rem}
+.pill{display:inline-block;padding:.1rem .55rem;border-radius:99px;font-size:.75rem;font-weight:600;border:1px solid var(--bd)}
+.pill.blue{color:var(--blue);border-color:var(--blue)}.pill.amber{color:var(--amber);border-color:var(--amber)}
+.mw-hover{transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background-color var(--dur) var(--ease)}
+.mw-hover:hover,.mw-hover:focus-visible{transform:translateY(-1px) scale(1.03);box-shadow:0 6px 18px rgba(10,10,10,.12)}
+.mw-hover:active{transform:scale(.98)}
+@media (prefers-reduced-motion:reduce){.mw-hover,.mw-hover:hover{transition:none;transform:none}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;min-height:48px;padding:0 2rem;border:2px solid var(--pri);background:transparent;color:var(--pri);font:600 .85rem "Hind",sans-serif;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;border-radius:0}
+.btn:hover{background:var(--pri);color:#fafafa}.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+footer{text-align:center;padding:2rem 1rem 3rem;color:var(--mut)}footer a{color:var(--fg);display:inline-block;padding:.75rem 0;min-height:44px}
+#toast{min-height:1.5rem;color:var(--green);font-size:.9rem}
+@media (min-width:1100px){.top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}.top .grid{grid-template-columns:1fr}.top section:first-child .grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1600px){
+html{font-size:20px}body{font-size:20px;line-height:1.5}
+.wrap{max-width:90vw;padding:1.75rem}
+h1{font-size:2.6rem}h2{font-size:1.6rem;margin:2rem 0 .85rem}h3{font-size:1.2rem}
+.grid{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.card{padding:1.25rem;gap:1rem}
+.ic{width:34px;height:34px;border-radius:10px}.ic svg{width:22px;height:22px}
+.num{width:34px;height:34px;font-size:1rem}
+.label{font-size:.75rem}.pill{font-size:.75rem}
+.btn{min-height:56px;padding:0 2.25rem;font-size:.85rem}.btn svg{width:22px;height:22px}
+.bar{padding:1.25rem;margin-top:1.5rem}
+.sg summary{padding:1.15rem;gap:1rem}.sg .more{padding:0 1.15rem 1.15rem 3.75rem}
+.top .grid{grid-template-columns:1fr!important}.top section:first-child .grid{grid-template-columns:1fr 1fr!important}
+}
+@media (min-width:2400px){
+html{font-size:24px}body{font-size:24px;line-height:1.5}
+.wrap{max-width:90vw;padding:2.25rem}
+h1{font-size:2.6rem}h2{font-size:1.6rem;margin:2.25rem 0 1rem}h3{font-size:1.2rem}
+.grid{grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{padding:1.5rem;gap:1.15rem}
+.ic{width:40px;height:40px;border-radius:12px}.ic svg{width:26px;height:26px}
+.num{width:40px;height:40px;font-size:1.05rem}
+.btn{min-height:64px;padding:0 2.5rem}.btn svg{width:26px;height:26px}
+.bar{padding:1.5rem;margin-top:1.75rem}
+.sg summary{padding:1.35rem;gap:1.15rem}.sg .more{padding:0 1.35rem 1.35rem 4.25rem}
+.top{gap:1.5rem}
+}
+.bar{background:#fff;border:1px solid var(--bd);border-left:4px solid var(--blue);border-radius:var(--r);padding:1rem;margin-top:1.25rem}.bar .sub{color:var(--mut);margin:.2rem 0 .75rem}
+.sg{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r)}.sg summary{list-style:none;display:flex;gap:.75rem;padding:1rem;min-height:44px;cursor:pointer}.sg summary::-webkit-details-marker{display:none}
+.sg p{margin:.35rem 0 0;font-size:.95rem}.sg .more{padding:0 1rem 1rem 3.25rem;color:var(--mut)}.num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--pri);color:#fafafa;display:grid;place-items:center;font:700 .9rem "Khand",sans-serif}
+.sg[open]{transform:none}
+
+.alert{background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--amber);border-radius:var(--r);margin-top:.25rem}
+.alert>summary{list-style:none;display:flex;align-items:center;gap:.75rem;padding:1rem;min-height:44px;cursor:pointer;font-weight:600;color:var(--fg)}
+.alert>summary::-webkit-details-marker{display:none}
+.alert>summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--mut);border-bottom:2px solid var(--mut);transform:rotate(45deg);margin-left:auto;flex:none}
+.alert[open]>summary::after{transform:rotate(-135deg);margin-top:4px}
+.alert .ic{background:#fef3c7}
+.alert .ic svg{stroke:var(--amber)}
+.alert .abody{padding:0 1rem 1rem 3.25rem;color:var(--mut)}
+.alert .abody h3{color:var(--fg);margin:0 0 .2rem}
+.alert .abody p{margin:0;font-size:.95rem}
+.alert:not([open])>.abody{display:none}
+@media (min-width:1600px){.alert>summary{padding:1.15rem;gap:1rem}.alert .abody{padding:0 1.15rem 1.15rem 3.75rem}}
+@media (min-width:2400px){.alert>summary{padding:1.35rem;gap:1.15rem}.alert .abody{padding:0 1.35rem 1.35rem 4.25rem}}
+
+#qs{background:#fff;border:1px solid var(--bd);border-left:4px solid var(--pri);border-radius:var(--r);padding:1rem;margin:0 0 1.5rem}
+#qs h2{margin:.25rem 0 .25rem}#qs .sub{color:var(--mut);margin:0 0 1rem}
+.q{border-top:1px solid var(--bd);padding:1rem 0}.q h3{font-size:1.25rem}.q .why{margin:.2rem 0 .75rem;color:var(--mut)}
+.qv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem}
+.qb{min-height:48px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;gap:.35rem;border:2px solid var(--bd);background:#fff;color:var(--fg);font:600 .9rem "Hind",sans-serif;cursor:pointer;border-radius:0;padding:0 .4rem;touch-action:manipulation}
+.qb svg{width:16px;height:16px;flex:none}
+.qb[data-v=no].on{background:#e5e5e5;border-color:#737373}.qb[data-v=maybe].on{background:#fef3c7;border-color:var(--amber)}
+.qb[data-v=love].on{background:#fee2e2;border-color:#dc2626}.qb[data-v=yes].on{background:#dcfce7;border-color:var(--green)}
+.qn{margin-top:.5rem;min-height:44px;min-width:44px;background:none;border:0;color:var(--mut);font:600 .85rem "Hind",sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;padding:0 .25rem}
+.q textarea{display:none;width:100%;min-height:4.5rem;margin-top:.25rem;font:inherit;padding:.5rem;border:1px solid var(--bd);border-radius:0}.q textarea.show{display:block}
+#qs .mws-wrap{max-width:none}#qs .mws-btn{width:100%;min-height:64px;font-size:1.4rem}
+#qCopyRow{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:center}#qCopyMsg{color:var(--green);font-size:.9rem}
+#qCopyBox{width:100%;min-height:6rem;margin-top:.5rem}
+@media (min-width:1600px){#qs{padding:1.5rem}.qv{max-width:40rem}.qb{min-height:56px}}
+#qs{scroll-margin-top:12px}
+.q .fx{margin:.35rem 0 0;font-size:1rem}.q .fx b{font-weight:600;color:var(--fg)}.q .prob{color:var(--fg)}.q .sol{color:var(--fg)}
+.q .own{margin:.35rem 0 .6rem;color:var(--mut);font-size:.85rem}
+.q figure{margin:.6rem 0 .75rem;max-width:36rem}.q figure img{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:var(--r);background:#fff}
+.qv{grid-template-columns:repeat(3,minmax(0,1fr));max-width:30rem}
+#qBackRow{display:flex;justify-content:center;margin:.25rem 0 .75rem}#qBack{text-decoration:none}
+@media (min-width:1100px){.q{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26rem);column-gap:1.5rem}.q{grid-template-rows:repeat(7,auto) 1fr}.q figure{grid-column:2;grid-row:1/span 8;margin-top:0;align-self:start}.q>*:not(figure){grid-column:1}}
+.apps-top{margin:.5rem 0 1rem}.apps-top .label{margin-bottom:.5rem}
+.apps-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+.apps-strip a{display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;min-height:72px;padding:.75rem .85rem;background:var(--card);border:1px solid var(--bd);border-left:4px solid #05668D;border-radius:var(--r);color:inherit;text-decoration:none}
+.apps-strip a .ic{background:#e6f0f4}.apps-strip a .ic svg{stroke:#05668D}
+.apps-strip a h3{font-size:1.05rem;margin:0}.apps-strip a p{margin:0;font-size:.8rem;color:var(--mut)}
+@media (max-width:520px){.apps-strip{grid-template-columns:1fr;gap:.4rem}.apps-strip a{min-height:56px;flex-direction:row;align-items:center;gap:.65rem}}
+@media (min-width:1600px){.apps-strip{gap:.85rem}.apps-strip a{min-height:96px;padding:1.1rem}.apps-strip a h3{font-size:1.25rem}.apps-strip a p{font-size:.9rem}.apps-strip a .ic{width:34px;height:34px}.apps-strip a .ic svg{width:22px;height:22px}}
+@media (min-width:2400px){.apps-strip a{min-height:112px;padding:1.35rem}.apps-strip a h3{font-size:1.4rem}.apps-strip a .ic{width:40px;height:40px}.apps-strip a .ic svg{width:26px;height:26px}}
+.topnav{margin:0 0 .5rem}.topnav .home{color:var(--fg);text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;padding:0 .25rem}
+@media (min-width:1600px){.topnav .home{font-size:.9rem}}
+@media (min-width:2400px){.topnav .home{font-size:1rem}}
+.dec h2{margin:2rem 0 .75rem;padding:.6rem .85rem;background:#e6f0f4;border-left:4px solid #05668D;text-transform:uppercase;letter-spacing:.08em;font-size:1.25rem}
+.rw .card{border-radius:0;border-left:4px solid #0B6E4F}@media(max-width:700px){.rw{grid-template-columns:1fr 1fr}.rw .card{flex-direction:column}}
+.std{background:#fff;border:1px solid var(--bd);border-radius:var(--r);margin:.5rem 0}.std summary{min-height:44px;padding:.75rem 1rem;cursor:pointer;font:700 1.15rem "Khand",sans-serif}.std ol{margin:0;padding:0 1rem 1rem 2.25rem}.std li{margin:.25rem 0}
+
+/* Dashboard Layout Deck round 1 (Max, Oct 13 2026): 12 Yes picks */
+.tbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:.75rem;margin:0 -1.25rem .75rem;padding:0 1.25rem;min-height:48px;background:rgba(251,248,241,.96);border-bottom:1px solid var(--bd);backdrop-filter:blur(6px)}
+.tbar .home{color:var(--fg);text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+.tbar .nm{font:700 1.15rem "Khand",sans-serif;flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbar .upd{color:var(--mut);font-size:.8rem;white-space:nowrap}
+@media (min-width:1600px){.tbar{margin:0 -1.75rem .85rem;padding:0 1.75rem;min-height:56px}.tbar .home,.tbar .upd{font-size:.9rem}.tbar .nm{font-size:1.3rem}}
+@media (min-width:2400px){.tbar{margin:0 -2.25rem 1rem;padding:0 2.25rem;min-height:64px}.tbar .home,.tbar .upd{font-size:1rem}.tbar .nm{font-size:1.45rem}}
+h2{margin:1.25rem 0 .5rem}.grid{gap:.5rem}#qs{margin-bottom:1rem}.wrap>p{margin:.35rem 0}
+@media (min-width:1600px){h2{margin:1.4rem 0 .6rem}.grid{gap:.85rem}}
+@media (min-width:2400px){h2{margin:1.6rem 0 .7rem}.grid{gap:1rem}}
+details.rep{padding:0}details.rep>summary{list-style:none;display:flex;align-items:center;gap:.75rem;min-height:48px;padding:.75rem 1rem;cursor:pointer;font-weight:600}
+details.rep>summary::-webkit-details-marker{display:none}
+details.rep>summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--mut);border-bottom:2px solid var(--mut);transform:rotate(45deg);margin-left:auto;flex:none}
+details.rep[open]>summary::after{transform:rotate(-135deg)}
+details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar+.alert{margin-top:.5rem}
+.grid .card{padding:.6rem .85rem;align-items:center;cursor:pointer}
+.card p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.card.open p{-webkit-line-clamp:unset;display:block}
+.card>div{flex:1;min-width:0}.card .date{margin-left:auto;flex:none;text-align:right;color:var(--mut);font-size:.85rem;white-space:nowrap;padding-left:.5rem}
+.rw .card{flex-direction:row!important}@media(max-width:700px){.rw{grid-template-columns:1fr!important}}
+.more5{display:none!important}.seeall{margin-top:.5rem;min-height:44px;min-width:44px;background:none;border:0;color:var(--blue);font:600 .85rem "Hind",sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;padding:0 .25rem}
+.stats{display:flex;gap:.5rem;overflow-x:auto;margin:.75rem 0 0;padding-bottom:2px}
+.stat{flex:1 0 0;min-width:5.5rem;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:.5rem .75rem}.stat b{display:block;font:700 1.5rem/1.1 "Khand",sans-serif}.stat span{font-size:.75rem;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+@media (min-width:1600px){.stat{padding:.75rem 1rem}.stat b{font-size:1.8rem}}
+
+.exp{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.5rem}
+.ex{display:flex;align-items:center;gap:.75rem;background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:.6rem .85rem;min-height:56px}
+.ex h3{font-size:1.1rem}.ex p{margin:0;color:var(--mut);font-size:.85rem}.ex>div{flex:1;min-width:0}
+.rag{flex:none;font-weight:600;font-size:.8rem;padding:.15rem .6rem;border-radius:99px;border:1px solid}
+.rag.r{color:#b91c1c;border-color:#b91c1c;background:#fef2f2}.rag.a{color:#b45309;border-color:#d97706;background:#fffbeb}.rag.g{color:#15803d;border-color:#16a34a;background:#f0fdf4}
+.alert.urg{border-left-color:#b91c1c}.alert.urg .ic{background:#fee2e2}.alert.urg .ic svg{stroke:#b91c1c}
+.tbar .dk{color:var(--fg);font-size:.8rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:0 .25rem}
+.dhead{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+#midSub{min-height:44px;padding:0 1.1rem;background:#0B6E4F;border:2px solid #0B6E4F;color:#fff;font:600 .85rem "Hind",sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+#endSub{width:100%;min-height:64px;font-size:1.3rem;background:#0B6E4F;color:#fff;border:0;font-family:"Hind",sans-serif;font-weight:600;cursor:pointer;margin-top:1rem}
+#sentBox{display:none;text-align:center;padding:1rem 0}#sentBox.show{display:block}#sentBox p{color:var(--green);font-weight:600}
+#bigBack{display:flex;justify-content:center;align-items:center;width:100%;min-height:72px;font-size:1.3rem;background:var(--pri);color:#fff;text-decoration:none;font-weight:600}
+.q .src{font-size:.85rem;margin:.1rem 0 .4rem}.q .src a{color:var(--blue);display:inline-block;min-height:24px}
+.ip{border-top:1px solid var(--bd);padding:.75rem 0}.ip .pill{margin-top:.35rem}
+</style><script src="ptr.js" defer></script></head><body><main class="wrap">
+<header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 1:40 PM ICT</span></header>
+<section class="apps-top" aria-label="Security Apps"><div class="label">Security Apps</div><nav class="apps-strip">
+<a class="mw-hover" href="#deck"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg></span><div><h3>Security Deck: Round 1</h3><p>15 decisions on this page</p></div></a>
+<a class="mw-hover" href="#exposure"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><h3>Exposure Overview</h3><p>Six areas, Red Amber Green</p></div></a>
+</nav></section>
+<div class="label">AI Resources</div>
+<h1>Security Command Center</h1>
+<p>Head of security: finds risks, proposes fixes, and tracks them until done.</p>
+<p><span class="dot"></span><strong>Active</strong> &middot; Updated Oct 14, 2026, 1:40 PM ICT</p>
+<details class="bar rep" aria-label="Report"><summary><span class="sline">Fresh Start &middot; First Security Review Done, Round 1 Deck Open</span></summary><div class="rbody"><p class="sub">First review of code, logins, money accounts, customer data, legal and the shared computer. Four areas are Red. Fifteen decisions are in the deck below; one urgent fix is already in progress.</p></div></details>
+<details class="alert urg mw-hover"><summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span>1 Urgent &middot; In Progress</summary>
+<div class="abody" id="urgList"></div></details>
+<div class="stats" aria-label="Stats"><div class="stat"><b>4</b><span>Red</span></div><div class="stat"><b>2</b><span>Amber</span></div><div class="stat"><b>0</b><span>Green</span></div><div class="stat"><b>15</b><span>Decisions</span></div></div>
+
+<h2 id="exposure">Exposure Overview</h2><div class="exp">
+<div class="ex"><div><h3>Code And Repos</h3><p>All repos public; agent access broad</p></div><span class="rag r">Red</span></div>
+<div class="ex"><div><h3>Passwords And Logins</h3><p>Plain passwords in files; weak site gate; 2FA unknown</p></div><span class="rag r">Red</span></div>
+<div class="ex"><div><h3>Financial Accounts</h3><p>2FA status unknown; tax files in a shared folder</p></div><span class="rag a">Amber</span></div>
+<div class="ex"><div><h3>Customer Data</h3><p>Details on a public page; unencrypted copies</p></div><span class="rag r">Red</span></div>
+<div class="ex"><div><h3>Legal And IP</h3><p>No trademark, NDAs or IP assignment yet</p></div><span class="rag a">Amber</span></div>
+<div class="ex"><div><h3>Shared Computer</h3><p>Signed-in sessions and secrets shared by all agents</p></div><span class="rag r">Red</span></div>
+</div>
+
+<section id="qs" aria-label="Security Deck" style="margin-top:1.25rem"><span id="deck"></span>
+<div class="dhead"><div class="label">Security &middot; Round 1</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
+<h2 id="qTitle" style="margin-top:.25rem">Security Deck: Round 1</h2><p class="sub" id="qSub"></p>
+<div id="qList"></div>
+<button type="button" id="endSub" class="mw-hover">Submit</button>
+<p id="subMsg" role="status" aria-live="polite" style="text-align:center;color:var(--mut)"></p>
+<div id="sentBox"><p>Sent. Unanswered cards come back next round.</p><a id="bigBack" class="mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Back to Deck Building</a></div>
+</section>
+
+<h2>Recent Work</h2><div class="grid rw">
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>First Security Review</h3><p>Exposure Overview and Round 1 deck published.</p></div></div>
+</div>
+<div style="text-align:center;margin-top:2.5rem"><button id="share" class="btn mw-hover"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>Share</button><div id="toast" aria-live="polite"></div></div>
+</main>
+<footer><a class="mw-hover" href="https://maxweberman.com">Built by Max Weberman</a></footer>
+<script src="submit.js?v=sec1"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id),e=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const IC={no:'<svg viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+maybe:'<svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"><path d="M9.5 9a2.6 2.6 0 1 1 3.6 2.4c-.8.4-1.1 1-1.1 1.8v.6"/><circle cx="12" cy="17.6" r=".6" fill="#d97706"/></svg>',
+yes:'<svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>'};
+const ORDER=['yes','maybe','no'],L={no:'No',maybe:'Maybe',yes:'Yes'};
+let D,KEY,st={};const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(_){}};
+function summary(){if(!D)return'';const c={yes:0,maybe:0,no:0};D.items.forEach(i=>{const v=st[i.id];if(v&&v.answer)c[v.answer]++});
+ const out=['Security Deck Round 1: '+c.yes+' Yes, '+c.maybe+' Maybe, '+c.no+' No'];
+ D.items.forEach(i=>{const v=st[i.id];if(v&&v.answer)out.push('- '+i.title+': '+L[v.answer])});return out.join('\n')}
+window.mwShareSummary=summary;
+function render(){$('qList').innerHTML=D.items.map((i,n)=>{const v=st[i.id]||{};return '<div class="q" data-id="'+e(i.id)+'"><h3>'+(n+2)+'. '+e(i.title)+'</h3>'+
+ '<p class="fx prob"><b>The Problem:</b> '+e(i.problem)+'</p><p class="fx sol"><b>The Fix:</b> '+e(i.fix)+'</p>'+
+ '<p class="own">Who Does It: '+e(i.owner)+'</p>'+(i.src?'<p class="src"><a href="'+e(i.src)+'" target="_blank" rel="noopener">Source</a></p>':'')+
+ '<div class="qv" role="group" aria-label="Answer for '+e(i.title)+'">'+
+ ORDER.map(k=>'<button type="button" class="qb mw-hover'+(v.answer===k?' on':'')+'" data-v="'+k+'" aria-pressed="'+(v.answer===k)+'">'+IC[k]+L[k]+'</button>').join('')+'</div>'+
+ '<button type="button" class="qn mw-hover" aria-expanded="'+(!!v.note)+'">Add Private Note</button><textarea class="'+(v.note?'show':'')+'" aria-label="Private note for '+e(i.title)+'">'+e(v.note||'')+'</textarea></div>'}).join('')}
+async function submit(){const ans=D.items.filter(i=>st[i.id]&&st[i.id].answer),un=D.items.filter(i=>!(st[i.id]&&st[i.id].answer)).map(i=>i.id);
+ const results={round:D.round,answers:st,questions:D.items.map(i=>({id:i.id,title:i.title})),partial:un.length>0,answered:ans.length,total:D.items.length,unanswered:un};
+ $('subMsg').textContent='Sending';
+ const ok=await MWSubmit.send({agent:'security',app:'security-dashboard',deck:'security-deck-round-1',results,notes:summary(),partial:un.length>0,answered:ans.length,total:D.items.length,unanswered:un});
+ if(!ok&&MWSubmit.blocked){$('subMsg').textContent='Not sent. Password needed.';return}
+ $('subMsg').textContent=ok?'':'Saved on this device; it sends when back online.';$('sentBox').classList.add('show');$('sentBox').scrollIntoView({block:'center'})}
+fetch('suggestions.json?'+Date.now()).then(r=>r.json()).then(d=>{D=d;KEY='security-q-'+d.round;try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){st={}}
+ $('qSub').textContent=d.subtitle;
+ $('urgList').innerHTML=d.inProgress.map(i=>'<div class="ip"><h3>1. '+e(i.title)+'</h3><p><b>The Problem:</b> '+e(i.problem)+'</p><p><b>The Fix:</b> '+e(i.fix)+'</p><p>Who Does It: '+e(i.owner)+'</p><span class="pill amber">'+e(i.status)+'</span></div>').join('');
+ render();
+ $('qList').addEventListener('click',ev=>{const q=ev.target.closest('.q');if(!q)return;const id=q.dataset.id,b=ev.target.closest('.qb');
+  if(b){const k=b.dataset.v;st[id]=Object.assign(st[id]||{},{answer:(st[id]&&st[id].answer===k)?null:k,time:new Date().toISOString()});save();
+   q.querySelectorAll('.qb').forEach(x=>{const on=x.dataset.v===st[id].answer;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});return}
+  if(ev.target.closest('.qn')){const t=q.querySelector('textarea');t.classList.toggle('show');ev.target.closest('.qn').setAttribute('aria-expanded',t.classList.contains('show'));if(t.classList.contains('show'))t.focus()}});
+ $('qList').addEventListener('input',ev=>{const q=ev.target.closest('.q');if(!q)return;const id=q.dataset.id;st[id]=Object.assign(st[id]||{},{note:ev.target.value,time:new Date().toISOString()});save()});
+ $('midSub').onclick=submit;$('endSub').onclick=submit;
+}).catch(()=>{});
+document.getElementById('share').onclick=async()=>{const u=location.href.split('#')[0],sm=summary(),t=(sm?sm+'\n':'')+'Security Command Center';
+if(navigator.share){try{await navigator.share({title:'Security Command Center',text:t,url:u});return}catch(x){if(x.name==='AbortError')return}}
+if(/iPhone|iPad|Android/i.test(navigator.userAgent)){location.href='sms:?&body='+encodeURIComponent(t+' '+u);return}
+try{await navigator.clipboard.writeText(t+' '+u);$('toast').textContent='Link copied'}catch(x){prompt('Copy link',u)}};
+document.querySelectorAll('.grid .card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
+})();
+</script></body></html>
