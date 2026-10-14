@@ -149,7 +149,16 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 .q .src{font-size:.85rem;margin:.1rem 0 .4rem}.q .src a{color:var(--blue);display:inline-block;min-height:24px}
 .ip{border-top:1px solid var(--bd);padding:.75rem 0}.ip .pill{margin-top:.35rem}
 </style><script src="ptr.js" defer></script></head><body><main class="wrap">
-<header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 1:30 PM ICT</span></header>
+<header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 1:40 PM ICT</span></header>
+<section id="qs" aria-label="Security Deck" style="margin-top:.5rem"><span id="deck"></span>
+<div class="dhead"><div class="label">Security &middot; Round 1</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
+<h2 id="qTitle" style="margin-top:.25rem">Security Deck: Round 1</h2><p class="sub" id="qSub"></p>
+<div id="qList"></div>
+<button type="button" id="endSub" class="mw-hover">Submit</button>
+<p id="subMsg" role="status" aria-live="polite" style="text-align:center;color:var(--mut)"></p>
+<div id="caught" hidden style="text-align:center;padding:1.5rem 0"><h3 style="font-size:1.6rem">All Caught Up, Next Round Coming</h3><p class="sub">Every card in this round has been submitted.</p></div>
+<div id="sentBox"><p id="sentP">Sent. Unanswered cards come back next round.</p><a id="bigBack" class="mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Back to Deck Building</a></div>
+</section>
 <section class="apps-top" aria-label="Security Apps"><div class="label">Security Apps</div><nav class="apps-strip">
 <a class="mw-hover" href="#deck"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg></span><div><h3>Security Deck: Round 1</h3><p>15 decisions on this page</p></div></a>
 <a class="mw-hover" href="#exposure"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><h3>Exposure Overview</h3><p>Six areas, Red Amber Green</p></div></a>
@@ -157,7 +166,7 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 <div class="label">AI Resources</div>
 <h1>Security Command Center</h1>
 <p>Head of security: finds risks, proposes fixes, and tracks them until done.</p>
-<p><span class="dot"></span><strong>Active</strong> &middot; Updated Oct 14, 2026, 1:30 PM ICT</p>
+<p><span class="dot"></span><strong>Active</strong> &middot; Updated Oct 14, 2026, 1:40 PM ICT</p>
 <details class="bar rep" aria-label="Report"><summary><span class="sline">Fresh Start &middot; First Security Review Done, Round 1 Deck Open</span></summary><div class="rbody"><p class="sub">First review of code, logins, money accounts, customer data, legal and the shared computer. Four areas are Red. Fifteen decisions are in the deck below; one urgent fix is already in progress.</p></div></details>
 <details class="alert urg mw-hover"><summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span>1 Urgent &middot; In Progress</summary>
 <div class="abody" id="urgList"></div></details>
@@ -172,15 +181,7 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 <div class="ex"><div><h3>Shared Computer</h3><p>Signed-in sessions and secrets shared by all agents</p></div><span class="rag r">Red</span></div>
 </div>
 
-<section id="qs" aria-label="Security Deck" style="margin-top:1.25rem"><span id="deck"></span>
-<div class="dhead"><div class="label">Security &middot; Round 1</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
-<h2 id="qTitle" style="margin-top:.25rem">Security Deck: Round 1</h2><p class="sub" id="qSub"></p>
-<div id="qList"></div>
-<button type="button" id="endSub" class="mw-hover">Submit</button>
-<p id="subMsg" role="status" aria-live="polite" style="text-align:center;color:var(--mut)"></p>
-<div id="caught" hidden style="text-align:center;padding:1.5rem 0"><h3 style="font-size:1.6rem">All Caught Up, Next Round Coming</h3><p class="sub">Every card in this round has been submitted.</p></div>
-<div id="sentBox"><p id="sentP">Sent. Unanswered cards come back next round.</p><a id="bigBack" class="mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Back to Deck Building</a></div>
-</section>
+<span id="deckHome"></span>
 
 <h2>Recent Work</h2><div class="grid rw">
 <div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>First Security Review</h3><p>Exposure Overview and Round 1 deck published.</p></div></div>
@@ -201,7 +202,7 @@ function summary(){if(!D)return'';const c={yes:0,maybe:0,no:0};D.items.forEach(i
  const out=['Security Deck Round 1: '+c.yes+' Yes, '+c.maybe+' Maybe, '+c.no+' No'];
  D.items.forEach(i=>{const v=st[i.id];if(v&&v.answer)out.push('- '+i.title+': '+L[v.answer])});return out.join('\n')}
 window.mwShareSummary=summary;
-function render(){const V=vis();$('caught').hidden=V.length>0;['qList','endSub','midSub','qSub'].forEach(x=>$(x).hidden=!V.length);if(!V.length){$("sentBox").classList.add("show");$("sentP").hidden=true}
+function render(){const V=vis();$('caught').hidden=V.length>0;['qList','endSub','midSub','qSub'].forEach(x=>$(x).hidden=!V.length);if(!V.length){const hm=$('deckHome');hm.parentNode.insertBefore($('qs'),hm);$("sentBox").classList.add("show");$("sentP").hidden=true}
 $('qList').innerHTML=V.map(i=>{const n=D.items.indexOf(i);const v=st[i.id]||{};return '<div class="q" data-id="'+e(i.id)+'"><h3>'+(n+2)+'. '+e(i.title)+'</h3>'+
  '<p class="fx prob"><b>The Problem:</b> '+e(i.problem)+'</p><p class="fx sol"><b>The Fix:</b> '+e(i.fix)+'</p>'+
  '<p class="own">Who Does It: '+e(i.owner)+'</p>'+(i.src?'<p class="src"><a href="'+e(i.src)+'" target="_blank" rel="noopener">Source</a></p>':'')+

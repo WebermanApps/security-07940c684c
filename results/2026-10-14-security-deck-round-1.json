@@ -1,0 +1,138 @@
+{
+  "submission": "c17ac98f-2228-4d5f-9350-9413324c707a",
+  "round": "security-deck-round-1",
+  "received": "2026-10-14T13:23:00+07:00",
+  "auth": "ok",
+  "counts": {
+    "yes": 14,
+    "maybe": 1,
+    "no": 0,
+    "answered": 15,
+    "total": 15
+  },
+  "answers": {
+    "private-repos": {
+      "answer": "yes",
+      "time": "2026-10-14T06:22:06.888Z"
+    },
+    "real-site-login": {
+      "answer": "yes",
+      "time": "2026-10-14T06:22:25.820Z"
+    },
+    "scrub-passwords": {
+      "answer": "yes",
+      "time": "2026-10-14T06:22:33.203Z"
+    },
+    "client-data-copies": {
+      "answer": "yes",
+      "time": "2026-10-14T06:22:37.537Z"
+    },
+    "passkeys-2fa": {
+      "answer": "yes",
+      "time": "2026-10-14T06:22:46.953Z"
+    },
+    "password-manager": {
+      "answer": "yes",
+      "time": "2026-10-14T06:22:49.487Z"
+    },
+    "agent-github-access": {
+      "answer": "yes",
+      "time": "2026-10-14T06:22:55.970Z"
+    },
+    "dropbox-lockdown": {
+      "answer": "maybe",
+      "time": "2026-10-14T06:23:12.973Z",
+      "note": "waiting for that upload to complete. remind me about this later."
+    },
+    "unique-passwords": {
+      "answer": "yes",
+      "time": "2026-10-14T06:23:15.170Z"
+    },
+    "open-endpoints": {
+      "answer": "yes",
+      "time": "2026-10-14T06:23:22.671Z"
+    },
+    "shared-browser": {
+      "answer": "yes",
+      "time": "2026-10-14T06:23:26.269Z"
+    },
+    "trademark-ip": {
+      "answer": "yes",
+      "time": "2026-10-14T06:23:30.136Z"
+    },
+    "before-member-data": {
+      "answer": "yes",
+      "time": "2026-10-14T06:23:38.452Z"
+    },
+    "stale-copies": {
+      "answer": "yes",
+      "time": "2026-10-14T06:23:45.020Z"
+    },
+    "backups-review": {
+      "answer": "yes",
+      "time": "2026-10-14T06:23:49.036Z"
+    }
+  },
+  "questions": [
+    {
+      "id": "private-repos",
+      "title": "Make The Code Private"
+    },
+    {
+      "id": "real-site-login",
+      "title": "Real Login For The Pre-Launch Site"
+    },
+    {
+      "id": "scrub-passwords",
+      "title": "Scrub Passwords From Shared Files"
+    },
+    {
+      "id": "client-data-copies",
+      "title": "Clean Up Copies Of Client Data"
+    },
+    {
+      "id": "passkeys-2fa",
+      "title": "Passkeys Or 2FA Everywhere"
+    },
+    {
+      "id": "password-manager",
+      "title": "Get A Password Manager"
+    },
+    {
+      "id": "agent-github-access",
+      "title": "Narrow Agent GitHub Access"
+    },
+    {
+      "id": "dropbox-lockdown",
+      "title": "Lock Down Dropbox"
+    },
+    {
+      "id": "unique-passwords",
+      "title": "No Shared Passwords Between Sites"
+    },
+    {
+      "id": "open-endpoints",
+      "title": "Protect The Open Submit Points"
+    },
+    {
+      "id": "shared-browser",
+      "title": "Sign Out Of The Shared Browser"
+    },
+    {
+      "id": "trademark-ip",
+      "title": "Protect The Brand And The Code"
+    },
+    {
+      "id": "before-member-data",
+      "title": "Ready Before Member Data Arrives"
+    },
+    {
+      "id": "stale-copies",
+      "title": "Take Down Old Public Copies"
+    },
+    {
+      "id": "backups-review",
+      "title": "Backups And A Monthly Review"
+    }
+  ]
+}
