@@ -1,0 +1,30 @@
+{
+ "agent": "security",
+ "decks": [
+  {
+   "id": "security-ready-1",
+   "name": "Password Reset Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-1-1y35ol/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "The 13 Round 2 password and safety cards plus 7 more on resets"
+  },
+  {
+   "id": "security-ready-2",
+   "name": "Protection Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-2-4i13c7/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "The 20 Round 3 cards: 2FA, real login, agent access and legal"
+  },
+  {
+   "id": "security-ready-3",
+   "name": "Data And Accounts Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-3-z07upz/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "2FA on money accounts, monthly checks, DNS and checkout"
+  }
+ ],
+ "updated": "2026-10-14T19:36:44+07:00"
+}
