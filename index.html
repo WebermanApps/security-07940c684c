@@ -158,7 +158,7 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 <script src="https://webermanapps.github.io/style-swipe/submit.js" defer></script>
 <script src="https://webermanapps.github.io/style-swipe/kit/deck-shelf.js?v=1" defer></script>
 <header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><button id="share" class="mw-hover" aria-label="Share" title="Share" style="background:none;border:1px solid var(--bd);border-radius:999px;width:34px;height:34px;padding:6px;cursor:pointer"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button><span class="upd">Updated Oct 14, 3:00 PM ICT</span></header>
-<details id="deckWrap" class="bar"><summary><span class="sline">Open Your Security Deck</span></summary><details class="mw-hover" id="oldDeck" style="margin:.5rem 0"><summary style="min-height:44px;padding:.6rem 0;cursor:pointer;font-weight:600">Older Inline Deck (Now In The Password Reset And Protection Decks)</summary>
+<details id="deckWrap" class="bar" hidden style="display:none" aria-hidden="true"><summary><span class="sline">Open Your Security Deck</span></summary><details class="mw-hover" id="oldDeck" style="margin:.5rem 0"><summary style="min-height:44px;padding:.6rem 0;cursor:pointer;font-weight:600">Older Inline Deck (Now In The Password Reset And Protection Decks)</summary>
 <section id="qs" aria-label="Security Deck" style="margin-top:.5rem"><span id="deck"></span>
 <div class="dhead"><div class="label" id="qLabel">Security &middot; Password Reset Deck</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
 <h2 id="qTitle" style="margin-top:.25rem">Password Reset Deck</h2><p class="sub" id="qSub"></p>
@@ -170,7 +170,7 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 </section>
 </details></details>
 <section class="apps-top" aria-label="Security Apps"><div class="label">Security Apps</div><nav class="apps-strip">
-<a class="mw-hover" href="#deck" onclick="document.getElementById('deckWrap').open=true"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg></span><div><h3>Password Reset Deck</h3><p>13 decisions, tap to open</p></div></a>
+
 <a class="mw-hover" href="#twofa"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><h3>2FA Checklist</h3><p>19 accounts, tap to tick</p></div></a>
 <a class="mw-hover" href="#exposure"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><h3>Exposure Overview</h3><p>Six areas, Red Amber Green</p></div></a>
 </nav></section>
@@ -270,4 +270,4 @@ if(/iPhone|iPad|Android/i.test(navigator.userAgent)){location.href='sms:?&body='
 try{await navigator.clipboard.writeText(t+' '+u);$('toast').textContent='Link copied'}catch(x){prompt('Copy link',u)}};
 document.querySelectorAll('.grid .card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
 })();
-</script><script>if(location.hash==="#deck")document.getElementById("deckWrap").open=true;</script></body></html>
+</script></body></html>
