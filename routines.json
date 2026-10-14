@@ -1,0 +1,3 @@
+{"updated":"2026-10-14 14:20 ICT","routines":[
+ {"name":"Security Deck Results","group":"Daily","schedule_plain":"Every Hour At :21 And :51, 8:21 AM To 10:51 PM ICT. Applies Submitted Deck Results And Publishes The Next Round","status":"on","last_run":"Today 1:51 PM"},
+ {"name":"Monthly Security Review","group":"Monthly","schedule_plain":"1st Of Each Month At 9:49 AM ICT, Starting Nov 1. Reviews Exposures And Publishes A New Deck Round","status":"on","last_run":"Not Run Yet"}]}
