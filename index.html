@@ -17,7 +17,7 @@ a.card{cursor:pointer}.card p{margin:.2rem 0 0;color:var(--mut);font-size:.95rem
 .ic svg{width:18px;height:18px;fill:none;stroke:var(--pri);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--green);margin-right:.4rem}
 .pill{display:inline-block;padding:.1rem .55rem;border-radius:99px;font-size:.75rem;font-weight:600;border:1px solid var(--bd)}
-.pill.blue{color:var(--blue);border-color:var(--blue)}.pill.amber{color:var(--amber);border-color:var(--amber)}
+.pill.blue{color:var(--blue);border-color:var(--blue)}.pill.amber{color:var(--amber);border-color:var(--amber)}.pill.green{color:var(--green);border-color:var(--green)}
 .mw-hover{transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background-color var(--dur) var(--ease)}
 .mw-hover:hover,.mw-hover:focus-visible{transform:translateY(-1px) scale(1.03);box-shadow:0 6px 18px rgba(10,10,10,.12)}
 .mw-hover:active{transform:scale(.98)}
@@ -148,11 +148,14 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 #bigBack{display:flex;justify-content:center;align-items:center;width:100%;min-height:72px;font-size:1.3rem;background:var(--pri);color:#fff;text-decoration:none;font-weight:600}
 .q .src{font-size:.85rem;margin:.1rem 0 .4rem}.q .src a{color:var(--blue);display:inline-block;min-height:24px}
 .ip{border-top:1px solid var(--bd);padding:.75rem 0}.ip .pill{margin-top:.35rem}
+.fa{display:flex;align-items:center;gap:.75rem;width:100%;min-height:56px;padding:.5rem .25rem;background:none;border:0;border-top:1px solid var(--bd);text-align:left;cursor:pointer;font:inherit;color:var(--fg)}
+.fa .fb{flex:none;width:26px;height:26px;border:2px solid var(--bd);display:flex;align-items:center;justify-content:center}.fa.on .fb{border-color:#16a34a}.fa .fb svg{width:18px;height:18px}
+.fa .ft{flex:1;min-width:0}.fa .ft b{display:block}.fa .ft small{color:var(--mut);font-size:.82rem}
 </style><script src="ptr.js" defer></script></head><body><main class="wrap">
-<header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 1:40 PM ICT</span></header>
+<header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 2:30 PM ICT</span></header>
 <section id="qs" aria-label="Security Deck" style="margin-top:.5rem"><span id="deck"></span>
-<div class="dhead"><div class="label">Security &middot; Round 1</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
-<h2 id="qTitle" style="margin-top:.25rem">Security Deck: Round 1</h2><p class="sub" id="qSub"></p>
+<div class="dhead"><div class="label">Security &middot; Round 2</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
+<h2 id="qTitle" style="margin-top:.25rem">Security Deck: Round 2</h2><p class="sub" id="qSub"></p>
 <div id="qList"></div>
 <button type="button" id="endSub" class="mw-hover">Submit</button>
 <p id="subMsg" role="status" aria-live="polite" style="text-align:center;color:var(--mut)"></p>
@@ -160,30 +163,48 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 <div id="sentBox"><p id="sentP">Sent. Unanswered cards come back next round.</p><a id="bigBack" class="mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Back to Deck Building</a></div>
 </section>
 <section class="apps-top" aria-label="Security Apps"><div class="label">Security Apps</div><nav class="apps-strip">
-<a class="mw-hover" href="#deck"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg></span><div><h3>Security Deck: Round 1</h3><p>15 decisions on this page</p></div></a>
+<a class="mw-hover" href="#deck"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg></span><div><h3>Security Deck: Round 2</h3><p>13 decisions on this page</p></div></a>
+<a class="mw-hover" href="#twofa"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><h3>2FA Checklist</h3><p>19 accounts, tap to tick</p></div></a>
 <a class="mw-hover" href="#exposure"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><h3>Exposure Overview</h3><p>Six areas, Red Amber Green</p></div></a>
 </nav></section>
 <div class="label">AI Resources</div>
 <h1>Security Command Center</h1>
 <p>Head of security: finds risks, proposes fixes, and tracks them until done.</p>
-<p><span class="dot"></span><strong>Active</strong> &middot; Updated Oct 14, 2026, 1:40 PM ICT</p>
-<details class="bar rep" aria-label="Report"><summary><span class="sline">Fresh Start &middot; First Security Review Done, Round 1 Deck Open</span></summary><div class="rbody"><p class="sub">First review of code, logins, money accounts, customer data, legal and the shared computer. Four areas are Red. Fifteen decisions are in the deck below; one urgent fix is already in progress.</p></div></details>
-<details class="alert urg mw-hover"><summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span>1 Urgent &middot; In Progress</summary>
+<p><span class="dot"></span><strong>Active</strong> &middot; Updated Oct 14, 2026, 2:30 PM ICT</p>
+<details class="bar rep" aria-label="Report"><summary><span class="sline">Round 1 Done &middot; Passwords Scrubbed, Temp Copies Deleted, Round 2 Open</span></summary><div class="rbody"><p class="sub">Your 14 Yes votes are done or handed to their owners. Plain passwords are scrubbed from shared files, decrypted guide copies are deleted, and GitHub leak scanning is confirmed on. Round 2 asks about changing the exposed passwords and a few new protections. Dropbox waits for your upload.</p></div></details>
+<details class="alert urg mw-hover" id="urgBox" hidden><summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span>1 Urgent &middot; In Progress</summary>
 <div class="abody" id="urgList"></div></details>
-<div class="stats" aria-label="Stats"><div class="stat"><b>4</b><span>Red</span></div><div class="stat"><b>2</b><span>Amber</span></div><div class="stat"><b>0</b><span>Green</span></div><div class="stat"><b>15</b><span>Decisions</span></div></div>
+<div class="stats" aria-label="Stats"><div class="stat"><b>2</b><span>Red</span></div><div class="stat"><b>4</b><span>Amber</span></div><div class="stat"><b>0</b><span>Green</span></div><div class="stat"><b>13</b><span>Decisions</span></div></div>
 
 <h2 id="exposure">Exposure Overview</h2><div class="exp">
-<div class="ex"><div><h3>Code And Repos</h3><p>All repos public; agent access broad</p></div><span class="rag r">Red</span></div>
-<div class="ex"><div><h3>Passwords And Logins</h3><p>Plain passwords in files; weak site gate; 2FA unknown</p></div><span class="rag r">Red</span></div>
+<div class="ex"><div><h3>Code And Repos</h3><p>Leak scanning on; repos public; agent access broad</p></div><span class="rag a">Amber</span></div>
+<div class="ex"><div><h3>Passwords And Logins</h3><p>Scrubbed from files; 6 still to change; 2FA unknown</p></div><span class="rag r">Red</span></div>
 <div class="ex"><div><h3>Financial Accounts</h3><p>2FA status unknown; tax files in a shared folder</p></div><span class="rag a">Amber</span></div>
-<div class="ex"><div><h3>Customer Data</h3><p>Details on a public page; unencrypted copies</p></div><span class="rag r">Red</span></div>
+<div class="ex"><div><h3>Customer Data</h3><p>Public page fixed; temp copies deleted; vault pending</p></div><span class="rag a">Amber</span></div>
 <div class="ex"><div><h3>Legal And IP</h3><p>No trademark, NDAs or IP assignment yet</p></div><span class="rag a">Amber</span></div>
 <div class="ex"><div><h3>Shared Computer</h3><p>Signed-in sessions and secrets shared by all agents</p></div><span class="rag r">Red</span></div>
 </div>
 
+<h2 id="doneRound">Done This Round</h2><div class="grid rw">
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>Passwords Scrubbed</h3><p>Removed from the password index, Home Guide test scripts and an agent memory file. Scripts now read an environment variable. Secrets folder locked to its owner.</p></div></div>
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>Client Copies Deleted</h3><p>Decrypted Home Guide copies removed from temp folders. Tenant and contract folders restricted; vault is a Round 2 card.</p></div></div>
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>GitHub Checked</h3><p>Leak scanning and push protection on for all 50 public repos, 0 alerts. Token plan written with Grok Bot. No branch rules added.</p></div></div>
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>Handed Off</h3><p>Private repos, site login and unique passwords to UpKeep; trademark to Legal; submit points and shared browser to Grok Bot; Walk page fixed by Construction.</p></div></div>
+</div>
+
+<h2 id="tracker">Tracker</h2><div class="grid rw">
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><h3>Max Sets Up 1Password</h3><p>Waiting on you. Then agents get vault access instead of raw passwords.</p><span class="pill amber">Not Started</span></div></div>
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span><div><h3>Monthly Security Review</h3><p>Checklist ready; first run in November.</p><span class="pill amber">Scheduling</span></div></div>
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span><div><h3>Dropbox Reminder</h3><p>Paused until your upload finishes, then Lock Down Dropbox comes back.</p><span class="pill amber">Waiting</span></div></div>
+</div>
+
+<h2 id="twofa">2FA Checklist</h2><p class="sub">Tap a row when it is on. Use the method shown, then save recovery codes offline (printed, never on the shared computer). Saved on this device.</p>
+<div id="faList"></div>
+
 <span id="deckHome"></span>
 
 <h2>Recent Work</h2><div class="grid rw">
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>Round 1 Applied</h3><p>14 Yes votes done or handed off; Round 2 deck published.</p></div></div>
 <div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><h3>First Security Review</h3><p>Exposure Overview and Round 1 deck published.</p></div></div>
 </div>
 <div style="text-align:center;margin-top:2.5rem"><button id="share" class="btn mw-hover"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>Share</button><div id="toast" aria-live="polite"></div></div>
@@ -199,24 +220,28 @@ yes:'<svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.6" st
 const ORDER=['yes','maybe','no'],L={no:'No',maybe:'Maybe',yes:'Yes'};
 let D,KEY,DK,done=[],st={};const vis=()=>D.items.filter(i=>!done.includes(i.id));const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(_){}};
 function summary(){if(!D)return'';const c={yes:0,maybe:0,no:0};D.items.forEach(i=>{const v=st[i.id];if(v&&v.answer)c[v.answer]++});
- const out=['Security Deck Round 1: '+c.yes+' Yes, '+c.maybe+' Maybe, '+c.no+' No'];
+ const out=[D.title+': '+c.yes+' Yes, '+c.maybe+' Maybe, '+c.no+' No'];
  D.items.forEach(i=>{const v=st[i.id];if(v&&v.answer)out.push('- '+i.title+': '+L[v.answer])});return out.join('\n')}
 window.mwShareSummary=summary;
 function render(){const V=vis();$('caught').hidden=V.length>0;['qList','endSub','midSub','qSub'].forEach(x=>$(x).hidden=!V.length);if(!V.length){const hm=$('deckHome');hm.parentNode.insertBefore($('qs'),hm);$("sentBox").classList.add("show");$("sentP").hidden=true}
-$('qList').innerHTML=V.map(i=>{const n=D.items.indexOf(i);const v=st[i.id]||{};return '<div class="q" data-id="'+e(i.id)+'"><h3>'+(n+2)+'. '+e(i.title)+'</h3>'+
+$('qList').innerHTML=V.map(i=>{const n=D.items.indexOf(i);const v=st[i.id]||{};return '<div class="q" data-id="'+e(i.id)+'"><h3>'+(n+1+D.inProgress.length)+'. '+e(i.title)+'</h3>'+
  '<p class="fx prob"><b>The Problem:</b> '+e(i.problem)+'</p><p class="fx sol"><b>The Fix:</b> '+e(i.fix)+'</p>'+
- '<p class="own">Who Does It: '+e(i.owner)+'</p>'+(i.src?'<p class="src"><a href="'+e(i.src)+'" target="_blank" rel="noopener">Source</a></p>':'')+
+ '<p class="own">Who Does It: '+e(i.owner)+'</p>'+(i.carried?'<span class="pill amber">'+e(i.carried)+'</span>':'')+(i.src?'<p class="src"><a href="'+e(i.src)+'" target="_blank" rel="noopener">Source</a></p>':'')+
  '<div class="qv" role="group" aria-label="Answer for '+e(i.title)+'">'+
  ORDER.map(k=>'<button type="button" class="qb mw-hover'+(v.answer===k?' on':'')+'" data-v="'+k+'" aria-pressed="'+(v.answer===k)+'">'+IC[k]+L[k]+'</button>').join('')+'</div>'+
  '<button type="button" class="qn mw-hover" aria-expanded="'+(!!v.note)+'">Add Private Note</button><textarea class="'+(v.note?'show':'')+'" aria-label="Private note for '+e(i.title)+'">'+e(v.note||'')+'</textarea></div>'}).join('')}
 async function submit(){const ans=vis().filter(i=>st[i.id]&&st[i.id].answer),un=vis().filter(i=>!(st[i.id]&&st[i.id].answer)).map(i=>i.id);
  const results={round:D.round,answers:st,questions:D.items.map(i=>({id:i.id,title:i.title})),partial:un.length>0,answered:ans.length,total:vis().length,unanswered:un};
  $('subMsg').textContent='Sending';
- const ok=await MWSubmit.send({agent:'security',app:'security-dashboard',deck:'security-deck-round-1',results,notes:summary(),partial:un.length>0,answered:ans.length,total:vis().length,unanswered:un});
+ const ok=await MWSubmit.send({agent:'security',app:'security-dashboard',deck:D.round,results,notes:summary(),partial:un.length>0,answered:ans.length,total:vis().length,unanswered:un});
  if(!ok&&MWSubmit.blocked){$('subMsg').textContent='Not sent. Password needed.';return}
  $('subMsg').textContent=ok?'':'Saved on this device; it sends when back online.';vis().forEach(i=>{const v=st[i.id];if(v&&(v.answer||(v.note&&v.note.trim())))done.push(i.id)});try{localStorage.setItem(DK,JSON.stringify(done))}catch(_){}render();$('sentBox').classList.add('show');$('sentBox').scrollIntoView({block:'center'})}
+const FA=[['Email / Google','Passkey + hardware key'],['GitHub: Machan1001','Passkey or hardware key'],['GitHub: WebermanApps','Passkey or hardware key'],['Dropbox','Passkey or authenticator app'],['Apple ID','Passkey + security keys'],['Instagram','Authenticator app'],['YouTube','Passkey (Google account)'],['Domain registrar','Authenticator or hardware key'],['Schwab','Authenticator or hardware key'],['Kraken','Hardware key or authenticator'],['PNC','Authenticator or app approval'],['SNB','Authenticator or app approval'],['Wise','Passkey or app approval'],['Amex','Passkey'],['Capital One','Passkey or app approval'],['Chase','Passkey or app approval'],['Apple Card','Covered by Apple ID'],['Venmo','Authenticator app'],['Northpointe','Authenticator or app approval']];
+let fs={};try{fs=JSON.parse(localStorage.getItem('security-2fa')||'{}')}catch(_){}
+function fa(){$('faList').innerHTML=FA.map((a,n)=>'<button type="button" class="fa mw-hover'+(fs[a[0]]?' on':'')+'" data-n="'+n+'" aria-pressed="'+!!fs[a[0]]+'"><span class="fb">'+(fs[a[0]]?IC.yes:'')+'</span><span class="ft"><b>'+e(a[0])+'</b><small>'+e(a[1])+' &middot; save recovery codes offline</small></span><span class="pill '+(fs[a[0]]?'green':'amber')+'">'+(fs[a[0]]?'On':'Unknown')+'</span></button>').join('')}
+fa();$('faList').addEventListener('click',ev=>{const b=ev.target.closest('.fa');if(!b)return;const k=FA[b.dataset.n][0];fs[k]=!fs[k];try{localStorage.setItem('security-2fa',JSON.stringify(fs))}catch(_){}fa()});
 fetch('suggestions.json?'+Date.now()).then(r=>r.json()).then(d=>{D=d;KEY='security-q-'+d.round;try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){st={}}DK='security-submitted-'+d.round;try{done=JSON.parse(localStorage.getItem(DK)||'[]')}catch(_){done=[]}
- $('qSub').textContent=d.subtitle;
+ $('qSub').textContent=d.subtitle;$('qTitle').textContent=d.title;$('urgBox').hidden=!d.inProgress.length;
  $('urgList').innerHTML=d.inProgress.map(i=>'<div class="ip"><h3>1. '+e(i.title)+'</h3><p><b>The Problem:</b> '+e(i.problem)+'</p><p><b>The Fix:</b> '+e(i.fix)+'</p><p>Who Does It: '+e(i.owner)+'</p><span class="pill amber">'+e(i.status)+'</span></div>').join('');
  render();
  $('qList').addEventListener('click',ev=>{const q=ev.target.closest('.q');if(!q)return;const id=q.dataset.id,b=ev.target.closest('.qb');

@@ -1,25 +1,106 @@
 {
- "round": "security-deck-round-1",
- "title": "Security Deck: Round 1",
+ "round": "security-deck-round-2",
+ "title": "Security Deck: Round 2",
  "subtitle": "Each card is a decision for you. Tap Yes, Maybe or No, add a private note if you like, and press Submit any time. Unanswered cards come back next round.",
- "inProgress": [
-  {"id": "public-customer-details", "title": "Customer Details On A Public App Page", "problem": "A customer's name, home address and house-entry instructions show publicly on the Walk-Through app page.", "fix": "Construction removes them now.", "owner": "Construction", "status": "In Progress, Max Approved, Construction Removing Now"}
- ],
+ "inProgress": [],
  "items": [
-  {"id": "private-repos", "title": "Make The Code Private", "problem": "Every WebermanApps repo is public, including the Smart Upkeep app and every dashboard, so the code, pricing and history are readable by anyone.", "fix": "Private repos break GitHub Pages on the free plan, so upgrade to a paid GitHub plan first. Then make repos private one by one. Live apps change only with your separate OK.", "owner": "Security and UpKeep", "src": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning"},
-  {"id": "real-site-login", "title": "Real Login For The Pre-Launch Site", "problem": "The smartupkeep.ai pre-launch gate checks the password in the browser with weak unsalted hashes, and old plain passwords still sit in the code history.", "fix": "Change those passwords and move to a real server login, for example Cloudflare Access.", "owner": "UpKeep"},
-  {"id": "scrub-passwords", "title": "Scrub Passwords From Shared Files", "problem": "Plain passwords sit in files on the shared computer: the team feed, Home Guide build and test scripts, and the password index.", "fix": "Remove them, change those passwords, and keep secrets only in environment variables or a vault.", "owner": "Security"},
-  {"id": "client-data-copies", "title": "Clean Up Copies Of Client Data", "problem": "Unencrypted copies of client and tenant data sit in temp and ops folders.", "fix": "Delete the temp copies and encrypt the rest. Nothing is deleted without your OK.", "owner": "Security"},
-  {"id": "passkeys-2fa", "title": "Passkeys Or 2FA Everywhere", "problem": "Status is unknown for passkeys or 2FA on email, GitHub, Google, Dropbox, Apple ID, Instagram, YouTube, the domain registrar and every bank, card, broker and crypto account.", "fix": "Turn on passkeys or 2FA on each, and keep printed recovery codes offline. Security sends you a checklist.", "owner": "Max, With A Checklist From Security", "src": "https://www.cisa.gov/MFA"},
-  {"id": "password-manager", "title": "Get A Password Manager", "problem": "Passwords are kept in files and memory, and agents sometimes see them.", "fix": "Set up a password manager such as 1Password and connect it so agents never see raw passwords.", "owner": "Max Sets It Up, Security Tracks It"},
-  {"id": "agent-github-access", "title": "Narrow Agent GitHub Access", "problem": "Agents have broad GitHub access, so one hijacked agent could change any repo.", "fix": "Give agents fine-grained tokens limited to one repo that expire, and turn on secret scanning, push protection and branch protection.", "owner": "Security and Grok Bot", "src": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"},
-  {"id": "dropbox-lockdown", "title": "Lock Down Dropbox", "problem": "A client handoff folder has a public edit link, an upload request is still open, and tax and financial files sit in a brand folder.", "fix": "Remove the public edit link, close the upload request, and move the tax and financial files to a private folder.", "owner": "Security, With Your OK"},
-  {"id": "unique-passwords", "title": "No Shared Passwords Between Sites", "problem": "One password is shared between the portfolio dashboard and the smartupkeep.ai gate.", "fix": "Give each its own unique password.", "owner": "Security and UpKeep"},
-  {"id": "open-endpoints", "title": "Protect The Open Submit Points", "problem": "The Submit receiver and WellNest Team Chat accept posts from anyone.", "fix": "Add rate limits and real authentication.", "owner": "Grok Bot"},
-  {"id": "shared-browser", "title": "Sign Out Of The Shared Browser", "problem": "Your Instagram session is signed in on the shared computer browser that every agent uses.", "fix": "Sign it out and give agents only the access they need. You approve anything agents publish, send, pay for or delete, to guard against hidden instructions on web pages.", "owner": "Security and Grok Bot", "src": "https://genai.owasp.org/llm-top-10/"},
-  {"id": "trademark-ip", "title": "Protect The Brand And The Code", "problem": "No trademark is filed, the SMART UPKEEP name has conflicts, and there are no NDAs or IP-assignment agreements.", "fix": "Run a full trademark search, decide who owns the IP, and get contractors to sign.", "owner": "Legal", "src": "https://www.uspto.gov/trademarks/basics"},
-  {"id": "before-member-data", "title": "Ready Before Member Data Arrives", "problem": "Real member data is coming, but there is no insurance, privacy policy, terms or breach plan yet.", "fix": "Get cyber and liability insurance, a privacy policy and terms, a breach plan (Michigan MCL 445.72), Stripe-hosted checkout, and collect less data.", "owner": "Legal and UpKeep", "src": "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-445-72"},
-  {"id": "stale-copies", "title": "Take Down Old Public Copies", "problem": "Old public copies remain: an earlier walk-through app on another GitHub account and Netlify copies.", "fix": "Take them down after you confirm.", "owner": "Security"},
-  {"id": "backups-review", "title": "Backups And A Monthly Review", "problem": "There is no regular backup of repos and key data, and no regular security check.", "fix": "Set up backups and a monthly security review.", "owner": "Security", "src": "https://www.cisa.gov/resources-tools/resources/cyber-essentials-toolkit"}
+  {
+   "id": "rotate-home-guide",
+   "title": "Change Niko's Home Guide Password",
+   "problem": "The Home Guide password sat in plain text in test scripts on the shared computer. It is scrubbed now, but treat it as exposed.",
+   "fix": "Construction changes it and tells Niko the new one. This touches a live client app, so it happens only with your OK.",
+   "owner": "Construction, With Your OK"
+  },
+  {
+   "id": "rotate-upkeep-gate",
+   "title": "Change The smartupkeep.ai Gate Passwords",
+   "problem": "All nine smartupkeep.ai gate passwords sat in plain text in the password index. Scrubbed now, still exposed.",
+   "fix": "UpKeep sets new ones (or moves to the real login you already approved) and shares them privately.",
+   "owner": "UpKeep, With Your OK"
+  },
+  {
+   "id": "rotate-shared-pages",
+   "title": "Change The Shared Page And Portfolio Passwords",
+   "problem": "The shared locked-pages password and the Portfolio password were exposed, and the Portfolio one is reused on the smartupkeep.ai gate.",
+   "fix": "Grok Bot and Portfolio set two new, different passwords, kept only in environment variables.",
+   "owner": "Grok Bot and Portfolio"
+  },
+  {
+   "id": "lockbox-code",
+   "title": "Change The Mellow Wood Lockbox Code",
+   "problem": "The rental lockbox code sat in plain text in an agent's memory file. Scrubbed now.",
+   "fix": "Change the code at the next visit and keep it only in your password manager.",
+   "owner": "Max, With Prop"
+  },
+  {
+   "id": "encrypted-vault",
+   "title": "Encrypted Vault For Tenant And Contract Files",
+   "problem": "Tenant details and Niko contracts sit unencrypted on the shared computer. Access is now limited, but any agent can still read them.",
+   "fix": "Move them into an encrypted vault (1Password documents or an encrypted Dropbox folder) that agents open only when needed.",
+   "owner": "Security, With Your OK",
+   "src": "https://support.1password.com/files/"
+  },
+  {
+   "id": "secret-alerts-review",
+   "title": "Monthly Secret Leak Check On GitHub",
+   "problem": "GitHub secret scanning and push protection are on for all 50 public repos, with 0 alerts today. Nobody reviews new alerts yet.",
+   "fix": "Security checks alerts every month and fixes any leak the same day.",
+   "owner": "Security",
+   "src": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning"
+  },
+  {
+   "id": "phishing",
+   "title": "Spot Fake Invoices And Phishing",
+   "problem": "Contractors, tenants and banks email you about money. A fake invoice or login page is the most common way small businesses lose money.",
+   "fix": "A one-page guide: call back on a known number before paying any new bank details, and never log in from an email link.",
+   "owner": "Security",
+   "src": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing"
+  },
+  {
+   "id": "sim-pin",
+   "title": "Carrier PIN Against SIM Swaps",
+   "problem": "If someone moves your phone number to their SIM, they get your bank text codes.",
+   "fix": "Add a port-out PIN with your carrier and switch banks from text codes to app or passkey sign-in.",
+   "owner": "Max, With A Guide From Security",
+   "src": "https://consumer.ftc.gov/articles/sim-swap-scams-how-protect-yourself"
+  },
+  {
+   "id": "registrar-lock",
+   "title": "Lock The smartupkeep.ai Domain",
+   "problem": "If someone takes over the domain, they control the site and its email.",
+   "fix": "Turn on registrar lock and 2FA at the registrar, and set auto-renew.",
+   "owner": "Max, With UpKeep",
+   "src": "https://www.icann.org/resources/pages/locked-2013-05-03-en"
+  },
+  {
+   "id": "recovery-audit",
+   "title": "Check Recovery Emails And Phones",
+   "problem": "Old recovery emails or numbers on Google, Apple, GitHub and banks are a back door into your accounts.",
+   "fix": "Security sends a list; you confirm or update the recovery email and phone on each.",
+   "owner": "Max, With A Checklist From Security"
+  },
+  {
+   "id": "device-security",
+   "title": "Lock Down Your Phone And Mac",
+   "problem": "Your phone and Mac hold every login. A lost device without encryption exposes everything.",
+   "fix": "Turn on FileVault, auto-lock within 5 minutes, Find My, and automatic updates on both.",
+   "owner": "Max, With A Checklist From Security",
+   "src": "https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac"
+  },
+  {
+   "id": "travel-wifi",
+   "title": "Safe Wi-Fi While Traveling In Thailand",
+   "problem": "Hotel and cafe Wi-Fi can be watched or faked, and you log into banks while traveling.",
+   "fix": "Use your phone hotspot or a trusted VPN for banking, and turn off auto-join for open networks.",
+   "owner": "Max, With A Guide From Security"
+  },
+  {
+   "id": "dropbox-lockdown",
+   "title": "Lock Down Dropbox",
+   "problem": "Carried over: you said Maybe while an upload was finishing. A public edit link and an open upload request still exist, and tax and financial files sit in a shared folder.",
+   "fix": "Remove the public edit link, close the upload request, and move the tax and financial files to a private folder once your upload is done.",
+   "owner": "Security, With Your OK",
+   "carried": "Carried Over, You Said Maybe"
+  }
  ]
 }
