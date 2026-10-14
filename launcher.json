@@ -1,0 +1,9 @@
+{"agent":"security",
+"categories":[
+{"id":"accounts","label":"Accounts And 2FA","blurb":"Logins, passkeys and recovery codes"},
+{"id":"exposure","label":"Exposure Fixes","blurb":"Red and Amber areas to close"},
+{"id":"data","label":"Data And Files","blurb":"Customer data, Dropbox and backups"},
+{"id":"agents","label":"Agent Access","blurb":"Shared computer, tokens and permissions"},
+{"id":"legal","label":"Legal And IP","blurb":"Trademark, NDAs and IP assignment"}],
+"unfinished":[{"name":"Security Deck Round 2","url":"#qs","answered":0,"total":13}],
+"ready":null}
