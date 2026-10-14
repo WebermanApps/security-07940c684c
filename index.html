@@ -157,7 +157,7 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 <div data-launcher="launcher.json" id="launcher"></div><script src="https://webermanapps.github.io/style-swipe/kit/deck-launcher.js?v=1" defer></script>
 <header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 2:30 PM ICT</span></header>
 <section id="qs" aria-label="Security Deck" style="margin-top:.5rem"><span id="deck"></span>
-<div class="dhead"><div class="label">Security &middot; Round 2</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
+<div class="dhead"><div class="label" id="qLabel">Security &middot; Round 2</div><button type="button" id="midSub" class="mw-hover">Submit</button></div>
 <h2 id="qTitle" style="margin-top:.25rem">Security Deck: Round 2</h2><p class="sub" id="qSub"></p>
 <div id="qList"></div>
 <button type="button" id="endSub" class="mw-hover">Submit</button>
@@ -247,8 +247,10 @@ const FA=[['Email / Google','Passkey + hardware key'],['GitHub: Machan1001','Pas
 let fs={};try{fs=JSON.parse(localStorage.getItem('security-2fa')||'{}')}catch(_){}
 function fa(){$('faList').innerHTML=FA.map((a,n)=>'<button type="button" class="fa mw-hover'+(fs[a[0]]?' on':'')+'" data-n="'+n+'" aria-pressed="'+!!fs[a[0]]+'"><span class="fb">'+(fs[a[0]]?IC.yes:'')+'</span><span class="ft"><b>'+e(a[0])+'</b><small>'+e(a[1])+' &middot; save recovery codes offline</small></span><span class="pill '+(fs[a[0]]?'green':'amber')+'">'+(fs[a[0]]?'On':'Unknown')+'</span></button>').join('')}
 fa();$('faList').addEventListener('click',ev=>{const b=ev.target.closest('.fa');if(!b)return;const k=FA[b.dataset.n][0];fs[k]=!fs[k];try{localStorage.setItem('security-2fa',JSON.stringify(fs))}catch(_){}fa()});
-fetch('suggestions.json?'+Date.now()).then(r=>r.json()).then(d=>{D=d;KEY='security-q-'+d.round;try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){st={}}DK='security-submitted-'+d.round;try{done=JSON.parse(localStorage.getItem(DK)||'[]')}catch(_){done=[]}
- $('qSub').textContent=d.subtitle;$('qTitle').textContent=d.title;$('urgBox').hidden=!d.inProgress.length;
+const gj=u=>fetch(u+'?'+Date.now()).then(r=>r.json());
+const pickDeck=()=>/[?&]d=r3\b/.test(location.search)?gj('suggestions-r3.json'):gj('suggestions.json').then(d=>{let dn=[];try{dn=JSON.parse(localStorage.getItem('security-submitted-'+d.round)||'[]')}catch(_){}return d.next&&d.items.every(i=>dn.includes(i.id))?gj(d.next):d});
+pickDeck().then(d=>{D=d;KEY='security-q-'+d.round;try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){st={}}DK='security-submitted-'+d.round;try{done=JSON.parse(localStorage.getItem(DK)||'[]')}catch(_){done=[]}
+ $('qSub').textContent=d.subtitle;$('qTitle').textContent=d.title;$('qLabel').textContent='Security · '+d.title.replace(/^.*: /,'');$('urgBox').hidden=!d.inProgress.length;
  $('urgList').innerHTML=d.inProgress.map(i=>'<div class="ip"><h3>1. '+e(i.title)+'</h3><p><b>The Problem:</b> '+e(i.problem)+'</p><p><b>The Fix:</b> '+e(i.fix)+'</p><p>Who Does It: '+e(i.owner)+'</p><span class="pill amber">'+e(i.status)+'</span></div>').join('');
  render();
  $('qList').addEventListener('click',ev=>{const q=ev.target.closest('.q');if(!q)return;const id=q.dataset.id,b=ev.target.closest('.qb');

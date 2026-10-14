@@ -1,0 +1,181 @@
+{
+ "round": "security-deck-round-3",
+ "title": "Security Deck: Round 3",
+ "subtitle": "Twenty decisions across five areas. Tap Yes, Maybe or No, add a private note if you like, and press Submit any time. Unanswered cards come back next round.",
+ "inProgress": [],
+ "items": [
+  {
+   "id": "retire-launch-day-password",
+   "title": "Retire The Old Launch-Day Password Sooner",
+   "problem": "At your request, UpKeep kept the old launch-day password working alongside u9 on smartupkeep.ai and the review build until the Cloudflare cutover. Old passwords also sit in plain text in git history, so anyone with the repo history can read it.",
+   "fix": "Yes retires it now: UpKeep removes it from both gates and u9 and the other codes keep working. No keeps it until the Cloudflare cutover as planned.",
+   "owner": "UpKeep, With Your OK",
+   "category": "Accounts And 2FA"
+  },
+  {
+   "id": "hardware-keys",
+   "title": "Two Hardware Keys For Google And GitHub",
+   "problem": "Account takeover is the top way to lose everything. SMS codes can be stolen with a SIM swap or a fake login page.",
+   "fix": "Buy two hardware keys (one main, one spare), add them plus a passkey to Google and both GitHub accounts, then turn off SMS fallback.",
+   "owner": "You",
+   "category": "Accounts And 2FA",
+   "src": "https://www.cisa.gov/MFA"
+  },
+  {
+   "id": "recovery-codes-offline",
+   "title": "Print Recovery Codes And Keep Them In A Safe",
+   "problem": "If a key or phone is lost without recovery codes, you can be locked out of your own company.",
+   "fix": "Print the GitHub, Google and Stripe recovery codes and keep them offline in a safe. Never store them on the shared computer.",
+   "owner": "You",
+   "category": "Accounts And 2FA",
+   "src": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication-recovery-methods"
+  },
+  {
+   "id": "stripe-2fa",
+   "title": "Passkey On The Stripe Account",
+   "problem": "Stripe is not on the 2FA checklist yet, but it will hold member payments once smartupkeep.ai launches.",
+   "fix": "Turn on a passkey or hardware key for Stripe before the first real payment, and add Stripe to the 2FA checklist.",
+   "owner": "You",
+   "category": "Accounts And 2FA",
+   "src": "https://docs.stripe.com/security/guide"
+  },
+  {
+   "id": "cloudflare-access",
+   "title": "Real Login For smartupkeep.ai With Cloudflare Access",
+   "problem": "Today's gate checks unsalted hashes in a public file. Anyone can skip it in the browser tools, and short words crack instantly.",
+   "fix": "Use Cloudflare Access (free up to 50 people): one email PIN per person and a log of who signed in. You create the account and OK the nameserver change.",
+   "owner": "You, Then UpKeep",
+   "category": "Exposure Fixes"
+  },
+  {
+   "id": "github-pro-private",
+   "title": "GitHub Pro So The smartupkeep.ai Repos Can Go Private",
+   "problem": "All three smartupkeep.ai repos are public, so the gate hashes, comments and git history are readable by anyone.",
+   "fix": "Upgrade WebermanApps to GitHub Pro ($4 a month), then make the repos private one at a time, each live one with its own OK.",
+   "owner": "You, Then UpKeep",
+   "category": "Exposure Fixes"
+  },
+  {
+   "id": "password-index-key",
+   "title": "Move The Plain-Text Gate Words Out Of The Password Index",
+   "problem": "The u-code key in the password index still holds the gate words in plain text, which breaks its own names-only rule. One row about the portfolio password is also out of date.",
+   "fix": "Move the key into your vault or an environment variable and delete the stale row.",
+   "owner": "Grok Bot",
+   "category": "Exposure Fixes"
+  },
+  {
+   "id": "branch-protection",
+   "title": "Block Force-Push And Deletion On main",
+   "problem": "Right now any agent or leaked login could wipe a repo's history or delete main. Full review rules would block agents from publishing.",
+   "fix": "Once each agent has its own token, add a rule on main that only blocks force-push and deletion. Publishing keeps working.",
+   "owner": "Security, With Your OK",
+   "category": "Exposure Fixes",
+   "src": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches"
+  },
+  {
+   "id": "repo-backups",
+   "title": "Weekly Encrypted Backup Of Every Repo",
+   "problem": "If GitHub deletes a repo or a login is taken over, there is no copy of the code outside GitHub.",
+   "fix": "Mirror every WebermanApps repo weekly to an encrypted backup outside GitHub, such as Dropbox or an offline drive.",
+   "owner": "Security",
+   "category": "Data And Files",
+   "src": "https://www.cisa.gov/resources-tools/resources/cyber-essentials-toolkit"
+  },
+  {
+   "id": "test-restore",
+   "title": "Test-Restore One Repo And One File Each Month",
+   "problem": "A backup nobody has tested may not work when you need it.",
+   "fix": "In the monthly review, restore one repo and one Dropbox file from backup and check they open.",
+   "owner": "Security",
+   "category": "Data And Files"
+  },
+  {
+   "id": "collect-less",
+   "title": "Collect Only Name, Email, Address And Phone From Members",
+   "problem": "Data you don't hold can't be breached. Door codes, ID copies or SSNs in the app would turn a small leak into a serious one.",
+   "fix": "Limit the member form to those four fields, keep photos in private storage, and delete member data when they cancel.",
+   "owner": "UpKeep And Legal",
+   "category": "Data And Files",
+   "src": "https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business"
+  },
+  {
+   "id": "stripe-hosted-checkout",
+   "title": "Card Payments Only Through Stripe Checkout",
+   "problem": "Collecting card numbers in our own forms would make us responsible for card security rules (PCI).",
+   "fix": "Use only Stripe hosted Checkout or Payment Links, with the Stripe portal for billing changes. Card data never touches our pages.",
+   "owner": "UpKeep",
+   "category": "Data And Files",
+   "src": "https://docs.stripe.com/security/guide"
+  },
+  {
+   "id": "per-agent-tokens",
+   "title": "One Expiring Token Per Agent",
+   "problem": "All agents share one broad GitHub login on the shared computer. That login works like a master key to every repo.",
+   "fix": "You create one fine-grained token per agent, limited to its own repos and expiring within 90 days. Security sets them up and tests each one.",
+   "owner": "You, Then Security",
+   "category": "Agent Access",
+   "src": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"
+  },
+  {
+   "id": "retire-broad-login",
+   "title": "Retire The Shared GitHub Login After Tokens Work",
+   "problem": "The broad login stays active until every agent has its own token, so the risk stays until it is removed.",
+   "fix": "When every agent's token passes its publish test, sign the shared login out of the box.",
+   "owner": "Security, With Your OK",
+   "category": "Agent Access"
+  },
+  {
+   "id": "approve-before-send",
+   "title": "Your OK Before Agents Email, Pay Or Delete",
+   "problem": "Agents read web pages and email, and hidden instructions in that content can hijack them (prompt injection).",
+   "fix": "Agents draft; you approve emails, payments, deletions and pushes to customer sites. Internal dashboards keep publishing on their own.",
+   "owner": "All Agents",
+   "category": "Agent Access",
+   "src": "https://genai.owasp.org/llm-top-10/"
+  },
+  {
+   "id": "security-log-review",
+   "title": "Monthly Check Of The GitHub Security Log",
+   "problem": "Without a look at the log, a strange login or token use by an agent could go unnoticed.",
+   "fix": "Add a GitHub security log review and a collaborator list check to the monthly review.",
+   "owner": "Security",
+   "category": "Agent Access",
+   "src": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-security-log"
+  },
+  {
+   "id": "privacy-policy",
+   "title": "Privacy Policy Before Member Data",
+   "problem": "The FTC treats privacy promises that don't match what a site really collects as deceptive.",
+   "fix": "Legal drafts a policy covering what is collected and shared (Stripe, Cloudflare, GoatCounter, AI vendors), and UpKeep publishes it before launch.",
+   "owner": "Legal, Then UpKeep",
+   "category": "Legal And IP",
+   "src": "https://www.ftc.gov/business-guidance/privacy-security"
+  },
+  {
+   "id": "breach-plan",
+   "title": "One-Page Breach Plan For Michigan",
+   "problem": "Michigan law (MCL 445.72) requires notifying affected residents after certain breaches, and there is no plan yet.",
+   "fix": "Legal writes who to call and a notice template. Security writes the steps to revoke keys and lock accounts.",
+   "owner": "Legal And Security",
+   "category": "Legal And IP",
+   "src": "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-445-72"
+  },
+  {
+   "id": "cyber-insurance",
+   "title": "Cyber Insurance Quotes For Smart Upkeep LLC",
+   "problem": "A breach involving member data could cost more than the business can cover alone.",
+   "fix": "Legal gets quotes for cyber liability, general liability and professional (E&O) cover, and you choose a budget.",
+   "owner": "Legal, Then You",
+   "category": "Legal And IP"
+  },
+  {
+   "id": "ip-assignment",
+   "title": "Written IP Assignment And NDAs From Helpers",
+   "problem": "Without a written assignment, contractors can own the code or work they made for you.",
+   "fix": "Use a contractor agreement with an NDA and IP assignment for US and Thai helpers before any new work.",
+   "owner": "Legal",
+   "category": "Legal And IP",
+   "src": "https://www.copyright.gov/circs/circ30.pdf"
+  }
+ ]
+}
