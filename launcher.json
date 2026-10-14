@@ -29,14 +29,14 @@
  ],
  "unfinished": [
   {
-   "name": "Security Deck Round 2",
+   "name": "Password Reset Deck",
    "url": "#qs",
    "answered": 0,
    "total": 13
   }
  ],
  "ready": {
-  "name": "Security Deck Round 3",
+  "name": "Protection Deck",
   "url": "?d=r3#qs",
   "total": 20,
   "categories": [

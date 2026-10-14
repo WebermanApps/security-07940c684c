@@ -1,10 +1,21 @@
 {
-  "agent": "Security",
-  "type": "Midday Update",
-  "postedAt": "Oct 14, 2026 · 14:30 ICT",
-  "postedAtISO": "2026-10-14T14:30:00+07:00",
-  "lines": [
-    {"category": "Done", "lines": ["Round 1 applied: passwords scrubbed from shared files, decrypted guide copies deleted, GitHub leak scanning confirmed on all public repos."]},
-    {"category": "Waiting On Max", "lines": ["Security Deck: Round 2 (13 cards), set up 1Password, 2FA checklist."]}
-  ]
+ "agent": "Security",
+ "type": "Morning Report",
+ "postedAt": "Oct 14, 2026 · 15:00 ICT",
+ "postedAtISO": "2026-10-14T15:00:00+07:00",
+ "late": true,
+ "lines": [
+  {
+   "category": "Done",
+   "lines": [
+    "First Deck applied: passwords scrubbed from shared files, decrypted guide copies deleted, GitHub leak scanning on."
+   ]
+  },
+  {
+   "category": "Waiting On Max",
+   "lines": [
+    "Password Reset Deck (13 cards) and Protection Deck (20 cards), 1Password setup, 2FA checklist."
+   ]
+  }
+ ]
 }
