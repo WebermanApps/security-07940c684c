@@ -149,7 +149,7 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 .q .src{font-size:.85rem;margin:.1rem 0 .4rem}.q .src a{color:var(--blue);display:inline-block;min-height:24px}
 .ip{border-top:1px solid var(--bd);padding:.75rem 0}.ip .pill{margin-top:.35rem}
 </style><script src="ptr.js" defer></script></head><body><main class="wrap">
-<header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 1:40 PM ICT</span></header>
+<header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><span class="upd">Updated Oct 14, 1:30 PM ICT</span></header>
 <section class="apps-top" aria-label="Security Apps"><div class="label">Security Apps</div><nav class="apps-strip">
 <a class="mw-hover" href="#deck"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg></span><div><h3>Security Deck: Round 1</h3><p>15 decisions on this page</p></div></a>
 <a class="mw-hover" href="#exposure"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><h3>Exposure Overview</h3><p>Six areas, Red Amber Green</p></div></a>
@@ -157,7 +157,7 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 <div class="label">AI Resources</div>
 <h1>Security Command Center</h1>
 <p>Head of security: finds risks, proposes fixes, and tracks them until done.</p>
-<p><span class="dot"></span><strong>Active</strong> &middot; Updated Oct 14, 2026, 1:40 PM ICT</p>
+<p><span class="dot"></span><strong>Active</strong> &middot; Updated Oct 14, 2026, 1:30 PM ICT</p>
 <details class="bar rep" aria-label="Report"><summary><span class="sline">Fresh Start &middot; First Security Review Done, Round 1 Deck Open</span></summary><div class="rbody"><p class="sub">First review of code, logins, money accounts, customer data, legal and the shared computer. Four areas are Red. Fifteen decisions are in the deck below; one urgent fix is already in progress.</p></div></details>
 <details class="alert urg mw-hover"><summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span>1 Urgent &middot; In Progress</summary>
 <div class="abody" id="urgList"></div></details>
@@ -178,7 +178,8 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 <div id="qList"></div>
 <button type="button" id="endSub" class="mw-hover">Submit</button>
 <p id="subMsg" role="status" aria-live="polite" style="text-align:center;color:var(--mut)"></p>
-<div id="sentBox"><p>Sent. Unanswered cards come back next round.</p><a id="bigBack" class="mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Back to Deck Building</a></div>
+<div id="caught" hidden style="text-align:center;padding:1.5rem 0"><h3 style="font-size:1.6rem">All Caught Up, Next Round Coming</h3><p class="sub">Every card in this round has been submitted.</p></div>
+<div id="sentBox"><p id="sentP">Sent. Unanswered cards come back next round.</p><a id="bigBack" class="mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Back to Deck Building</a></div>
 </section>
 
 <h2>Recent Work</h2><div class="grid rw">
@@ -195,24 +196,25 @@ const IC={no:'<svg viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width
 maybe:'<svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"><path d="M9.5 9a2.6 2.6 0 1 1 3.6 2.4c-.8.4-1.1 1-1.1 1.8v.6"/><circle cx="12" cy="17.6" r=".6" fill="#d97706"/></svg>',
 yes:'<svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>'};
 const ORDER=['yes','maybe','no'],L={no:'No',maybe:'Maybe',yes:'Yes'};
-let D,KEY,st={};const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(_){}};
+let D,KEY,DK,done=[],st={};const vis=()=>D.items.filter(i=>!done.includes(i.id));const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(_){}};
 function summary(){if(!D)return'';const c={yes:0,maybe:0,no:0};D.items.forEach(i=>{const v=st[i.id];if(v&&v.answer)c[v.answer]++});
  const out=['Security Deck Round 1: '+c.yes+' Yes, '+c.maybe+' Maybe, '+c.no+' No'];
  D.items.forEach(i=>{const v=st[i.id];if(v&&v.answer)out.push('- '+i.title+': '+L[v.answer])});return out.join('\n')}
 window.mwShareSummary=summary;
-function render(){$('qList').innerHTML=D.items.map((i,n)=>{const v=st[i.id]||{};return '<div class="q" data-id="'+e(i.id)+'"><h3>'+(n+2)+'. '+e(i.title)+'</h3>'+
+function render(){const V=vis();$('caught').hidden=V.length>0;['qList','endSub','midSub','qSub'].forEach(x=>$(x).hidden=!V.length);if(!V.length){$("sentBox").classList.add("show");$("sentP").hidden=true}
+$('qList').innerHTML=V.map(i=>{const n=D.items.indexOf(i);const v=st[i.id]||{};return '<div class="q" data-id="'+e(i.id)+'"><h3>'+(n+2)+'. '+e(i.title)+'</h3>'+
  '<p class="fx prob"><b>The Problem:</b> '+e(i.problem)+'</p><p class="fx sol"><b>The Fix:</b> '+e(i.fix)+'</p>'+
  '<p class="own">Who Does It: '+e(i.owner)+'</p>'+(i.src?'<p class="src"><a href="'+e(i.src)+'" target="_blank" rel="noopener">Source</a></p>':'')+
  '<div class="qv" role="group" aria-label="Answer for '+e(i.title)+'">'+
  ORDER.map(k=>'<button type="button" class="qb mw-hover'+(v.answer===k?' on':'')+'" data-v="'+k+'" aria-pressed="'+(v.answer===k)+'">'+IC[k]+L[k]+'</button>').join('')+'</div>'+
  '<button type="button" class="qn mw-hover" aria-expanded="'+(!!v.note)+'">Add Private Note</button><textarea class="'+(v.note?'show':'')+'" aria-label="Private note for '+e(i.title)+'">'+e(v.note||'')+'</textarea></div>'}).join('')}
-async function submit(){const ans=D.items.filter(i=>st[i.id]&&st[i.id].answer),un=D.items.filter(i=>!(st[i.id]&&st[i.id].answer)).map(i=>i.id);
- const results={round:D.round,answers:st,questions:D.items.map(i=>({id:i.id,title:i.title})),partial:un.length>0,answered:ans.length,total:D.items.length,unanswered:un};
+async function submit(){const ans=vis().filter(i=>st[i.id]&&st[i.id].answer),un=vis().filter(i=>!(st[i.id]&&st[i.id].answer)).map(i=>i.id);
+ const results={round:D.round,answers:st,questions:D.items.map(i=>({id:i.id,title:i.title})),partial:un.length>0,answered:ans.length,total:vis().length,unanswered:un};
  $('subMsg').textContent='Sending';
- const ok=await MWSubmit.send({agent:'security',app:'security-dashboard',deck:'security-deck-round-1',results,notes:summary(),partial:un.length>0,answered:ans.length,total:D.items.length,unanswered:un});
+ const ok=await MWSubmit.send({agent:'security',app:'security-dashboard',deck:'security-deck-round-1',results,notes:summary(),partial:un.length>0,answered:ans.length,total:vis().length,unanswered:un});
  if(!ok&&MWSubmit.blocked){$('subMsg').textContent='Not sent. Password needed.';return}
- $('subMsg').textContent=ok?'':'Saved on this device; it sends when back online.';$('sentBox').classList.add('show');$('sentBox').scrollIntoView({block:'center'})}
-fetch('suggestions.json?'+Date.now()).then(r=>r.json()).then(d=>{D=d;KEY='security-q-'+d.round;try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){st={}}
+ $('subMsg').textContent=ok?'':'Saved on this device; it sends when back online.';vis().forEach(i=>{const v=st[i.id];if(v&&(v.answer||(v.note&&v.note.trim())))done.push(i.id)});try{localStorage.setItem(DK,JSON.stringify(done))}catch(_){}render();$('sentBox').classList.add('show');$('sentBox').scrollIntoView({block:'center'})}
+fetch('suggestions.json?'+Date.now()).then(r=>r.json()).then(d=>{D=d;KEY='security-q-'+d.round;try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){st={}}DK='security-submitted-'+d.round;try{done=JSON.parse(localStorage.getItem(DK)||'[]')}catch(_){done=[]}
  $('qSub').textContent=d.subtitle;
  $('urgList').innerHTML=d.inProgress.map(i=>'<div class="ip"><h3>1. '+e(i.title)+'</h3><p><b>The Problem:</b> '+e(i.problem)+'</p><p><b>The Fix:</b> '+e(i.fix)+'</p><p>Who Does It: '+e(i.owner)+'</p><span class="pill amber">'+e(i.status)+'</span></div>').join('');
  render();
