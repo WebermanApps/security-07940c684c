@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 23:55 ICT",
+ "updated": "2026-10-16 03:55 ICT",
  "rule": "Any project Max has approved that still has work left stays in Ongoing Projects until it is finished (Max, Oct 15 2026 14:38 ICT). Maybe and No answers stay in the Questions Center. Finished projects drop off.",
  "projects": [
   {
@@ -7,7 +7,7 @@
    "name": "Back Up Everything",
    "tone": "amber",
    "status": "Plan ready, waiting on a storage choice",
-   "next": "Pick Dropbox or a dedicated backup service, then Security sets up an encrypted cloud backup of the computer (about forty GB). Optional: an encrypted external SSD as a second copy.",
+   "next": "Pick Dropbox or a dedicated backup service (re-asked in your next Security deck with Security's suggestion), then Security sets up an encrypted cloud backup of the computer (about forty GB) and checks it every week. Optional: an encrypted external SSD as a second copy.",
    "waiting": "Max",
    "approved": "Oct 14, 2026 (Backups And A Monthly Review: Yes); started Oct 15, 2026, 2:37 PM ICT"
   },
@@ -55,6 +55,42 @@
    "next": "Sign out of every session the agents don't need on the shared computer's browser, keep only the logins agents use daily, and list what was signed out in the Morning Report.",
    "waiting": "Security",
    "approved": "Oct 14, 2026 (Max: Yes, sign out of unneeded sessions); scheduled Oct 15, 2026, 11:55 PM ICT"
+  },
+  {
+   "id": "emergency-plan",
+   "name": "Emergency Access Plan",
+   "tone": "amber",
+   "status": "Approved, not started",
+   "next": "Security drafts a written emergency access plan (what to open, where recovery codes are kept, who to call) and you name one trusted person.",
+   "waiting": "Security, then Max",
+   "approved": "Oct 15, 2026 (Security Duties Deck 09: Written Plan and Trusted Person)"
+  },
+  {
+   "id": "will",
+   "name": "Consider Writing A Will",
+   "tone": "amber",
+   "status": "Your note on the emergency card, passed to Legal",
+   "next": "Legal looks at whether to write a will and what it would take, and brings it back to you as a question. Nothing is decided yet.",
+   "waiting": "Legal, then Max",
+   "approved": "Oct 15, 2026 (your note: we should consider writing a will)"
+  },
+  {
+   "id": "credit-freeze",
+   "name": "Credit Freeze And Fraud Alerts",
+   "tone": "amber",
+   "status": "Approved, not started",
+   "next": "Freeze your credit at the three credit bureaus and set fraud alerts. You do the sign-ups (they need your ID); Security sends the step list.",
+   "waiting": "Max",
+   "approved": "Oct 15, 2026 (Security Duties Deck 17: Credit Freeze and Fraud Alerts)"
+  },
+  {
+   "id": "security-score",
+   "name": "Security Score At The Top",
+   "tone": "amber",
+   "status": "Approved, not started",
+   "next": "Security sets how the score is worked out from the checklists, then shows it at the top of this board.",
+   "waiting": "Security",
+   "approved": "Oct 15, 2026 (Security Duties Deck 07: Security Score)"
   }
  ]
 }
