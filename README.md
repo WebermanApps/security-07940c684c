@@ -1,6 +1,6 @@
 # Security Command Center
 
-Order: Command Center header, decks (max 5), Security Day Checklist (secday.json, Oct 16 2026), Alerts, Ongoing Projects, Morning Report, Questions Center, the rest, Routines last.
+Order: Command Center header, decks (max 5), Security Day Checklist (data inline in index.html so it stays behind the lock, Oct 16 2026), Alerts, Ongoing Projects, Morning Report, Questions Center, the rest, Routines last.
 
 ## Ongoing Projects rule (Max, Oct 15 2026, 14:38 ICT)
 Any project Max has approved that still has work left moves into Ongoing Projects (projects.json) until it is finished.
