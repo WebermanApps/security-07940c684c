@@ -2,6 +2,16 @@
  "agent": "security",
  "decks": [
   {
+   "id": "security-dashboard-setup-deck",
+   "name": "Security Dashboard Setup Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-dashboard-setup-vo9p08/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "How your Security dashboard is laid out: top, sections, phone",
+   "added": "2026-10-15T23:26:48+07:00",
+   "tag": "Dashboard"
+  },
+  {
    "id": "security-duties-deck",
    "name": "Security Duties Deck",
    "url": "https://webermanapps.github.io/style-swipe/security-duties-vqj4jk/",
@@ -36,5 +46,5 @@
    "blurb": "2FA on money accounts, monthly checks, DNS and checkout"
   }
  ],
- "updated": "2026-10-15T22:55:39+07:00"
+ "updated": "2026-10-15T23:26:48+07:00"
 }
