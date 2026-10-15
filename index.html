@@ -153,9 +153,23 @@ details.rep .rbody{padding:0 1rem 1rem}details.rep .sline{flex:1;min-width:0;ove
 .fa{display:flex;align-items:center;gap:.75rem;width:100%;min-height:56px;padding:.5rem .25rem;background:none;border:0;border-top:1px solid var(--bd);text-align:left;cursor:pointer;font:inherit;color:var(--fg)}
 .fa .fb{flex:none;width:26px;height:26px;border:2px solid var(--bd);display:flex;align-items:center;justify-content:center}.fa.on .fb{border-color:#16a34a}.fa .fb svg{width:18px;height:18px}
 .fa .ft{flex:1;min-width:0}.fa .ft b{display:block}.fa .ft small{color:var(--mut);font-size:.82rem}
-.meter{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}.meter svg{width:180px;height:100px;flex:none}.meter h3{margin:0}.meter p{margin:.25rem 0 0;color:var(--mut)}</style><script src="ptr.js" defer></script><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/dash-theme.css?v=cc2"></head><body><main class="wrap">
+.meter{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}.meter svg{width:180px;height:100px;flex:none}.meter h3{margin:0}.meter p{margin:.25rem 0 0;color:var(--mut)}#qc{max-width:760px;margin:2rem auto 0}#qc h2{margin-top:0}
+.qcg{margin:1rem 0 .5rem}.qcc{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:1rem;margin:.75rem 0;overflow-wrap:anywhere}
+.qcc.ok{border-color:var(--green)}.qcc h3{font-size:1.25rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.qpill{font:600 .75rem "Hind",sans-serif;padding:.1rem .55rem;border-radius:99px;border:1px solid var(--bd);color:var(--mut)}.qpill.hi{color:#b45309;border-color:#d97706;background:#fffbeb}
+.qsub{border-top:1px solid var(--bd);padding:.6rem 0}.qsub b{display:block}.qsub small{display:block;color:var(--mut);font-size:.85rem}.qsub a{color:var(--blue)}
+.qbs{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}.qbs button,.qcbar button,.qsend{min-height:44px;padding:0 .9rem;border:1px solid var(--bd);background:#fff;border-radius:.5rem;font:600 .9rem "Hind",sans-serif;color:var(--fg);cursor:pointer}
+.qbs button.on{background:var(--pri);color:#fff;border-color:var(--pri)}.qbs button.det.on{background:var(--blue);border-color:var(--blue)}
+.qcc textarea{width:100%;min-height:44px;margin-top:.5rem;font:inherit;border:1px solid var(--bd);border-radius:.5rem;padding:.5rem}
+.qnote{background:none;border:0;color:var(--blue);font:inherit;min-height:44px;cursor:pointer;padding:0}.qft{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.4rem}
+.qsend,#qcAll{background:#0B6E4F!important;color:#fff!important;border-color:#0B6E4F!important}.qcbar{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:.5rem}#qcMsg{color:var(--green);font-weight:600}
+.qrem{display:inline-block;font-weight:600;color:#b45309;margin:.25rem 0}
+</style><script src="ptr.js" defer></script><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/dash-theme.css?v=cc2"></head><body><main class="wrap">
 <header class="tbar" aria-label="Top Bar"><a class="home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/">&larr; Apps Home</a><span class="nm">Security</span><a class="dk mw-hover" href="https://webermanapps.github.io/branding-djqmb410/decks/">Deck Building</a><button id="share" class="mw-hover" aria-label="Share" title="Share" style="background:none;border:1px solid var(--bd);border-radius:999px;width:34px;height:34px;padding:6px;cursor:pointer"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button><span class="upd">Updated Oct 15, 7:26 AM ICT</span></header>
 <div class="mw-cc-header"><div class="mw-cc-logo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 L39 11 V23 C39 33 32 40 24 43 C16 40 9 33 9 23 V11 Z"/><rect x="18" y="22" width="12" height="10" rx="1" fill="#05668D" stroke="#05668D"/><path d="M20 22 V19 A4 4 0 0 1 28 19 V22"/></svg></div><div class="mw-cc-text"><h1 class="mw-cc-title">Security Command Center</h1><p class="mw-cc-desc">Head of security: finds risks, proposes fixes, and tracks them until done</p></div></div><section data-shelf="shelf.json"></section><section id="morning" aria-label="Morning Report" class="card" style="display:block;margin:.75rem 0;padding:1rem"><h2 style="margin:0">Morning Report</h2><p class="sub" id="mrTime"></p><div id="mrBody"></div></section>
+<section id="qc" aria-label="Questions Center"><h2>Questions Center</h2><p class="sub" id="qcCount"></p><div id="qcList"></div>
+<div class="qcbar"><button type="button" id="qcAll" class="mw-hover">Submit All</button><span id="qcMsg" role="status" aria-live="polite"></span></div></section>
+
 <script>fetch('report.json?'+Date.now()).then(r=>r.json()).then(d=>{document.getElementById('mrTime').textContent=d.type+' · Posted '+d.postedAt+(d.late?' · Late':'');document.getElementById('mrBody').innerHTML=d.lines.map(g=>'<h3 style="margin:.5rem 0 .25rem">'+g.category+'</h3><ul style="margin:0;padding-left:1.2rem">'+g.lines.map(l=>'<li>'+l.replace(/</g,'&lt;')+'</li>').join('')+'</ul>').join('')}).catch(()=>{});</script>
 
 <script src="https://webermanapps.github.io/style-swipe/submit.js" defer></script>
@@ -271,4 +285,48 @@ if(/iPhone|iPad|Android/i.test(navigator.userAgent)){location.href='sms:?&body='
 try{await navigator.clipboard.writeText(t+' '+u);$('toast').textContent='Link copied'}catch(x){prompt('Copy link',u)}};
 document.querySelectorAll('.grid .card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
 })();
-</script></body></html>
+</script><script>
+(function(){
+const $=id=>document.getElementById(id),e=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const YN=['Yes','Not Now'],TD=['Confirm Takedown','Keep It Up'];
+const Q=[
+{id:'sq-lockdown',urg:'High',title:'Ready To Lock Down The Build?',subs:[
+ {id:'login',t:'Real Login For The Pre-Launch Site',d:'Cloudflare Access (free, up to 50 people), run by UpKeep. Each person signs in with an email code.',o:YN},
+ {id:'rotate',t:'Rotate Exposed Passwords',d:"Niko's Home Guide password; smartupkeep.ai gate passwords u1-u5; gate passwords u6-u9; shared locked-pages password; PORTFOLIO_DASH_PASSWORD; Mellow Wood lockbox code. Live apps change only with your separate OK.",o:YN},
+ {id:'tokens',t:'Narrower Agent GitHub Access',d:'One expiring token per agent, limited to its own repos (90 days max), plus a branch rule that blocks force-push and deletion on main.',o:YN},
+ {id:'2fa',t:'2FA Plus 1Password',d:'Turn on passkeys or an authenticator for 19 accounts, save recovery codes offline, and set up 1Password as the vault.',o:YN},
+ {id:'pro',t:'GitHub Pro At $4/Mo',d:'Lets the repos go private (about $48 a year). Each live repo still gets its own OK.',o:YN}]},
+{id:'sq-oldcopies',urg:'Normal',title:'Old Public Copies, Confirm Takedown',subs:[
+ {id:'jhc',t:'Japan House Crew Netlify Copy',d:'https://japan-house-crew-e29a34.netlify.app (up today)',o:TD},
+ {id:'akiya',t:'Akiya Netlify Copy',d:'https://akiya-swipe-ca1d27.netlify.app (up today)',o:TD},
+ {id:'walk',t:'Walk Netlify Copy',d:'https://ethan-walk-c0430f.netlify.app (up today, also on the Netlify account)',o:TD},
+ {id:'memo',t:'Strategy Memo Repo And Page',d:'Repo https://github.com/WebermanApps/strategy-memo is public. Its Pages site is already off (webermanapps.github.io/strategy-memo returns not found).',o:TD}]},
+{id:'sq-dropbox',urg:'Normal',title:'Lock Down Dropbox',rem:'Reminder: Mon Oct 20, 2026',due:'2026-10-20',subs:[
+ {id:'dbx',t:'Waiting On Your Upload',d:'You said Maybe until your upload finishes.',o:['Done Uploading, Lock It Down']}]}];
+const K='security-qc-v1';let st={},sent=[];try{st=JSON.parse(localStorage.getItem(K)||'{}');sent=JSON.parse(localStorage.getItem(K+'-sent')||'[]')}catch(_){}
+const sv=()=>{try{localStorage.setItem(K,JSON.stringify(st));localStorage.setItem(K+'-sent',JSON.stringify(sent))}catch(_){}};
+const days=d=>{const n=Math.round((new Date(d+'T00:00:00+07:00')-Date.now())/864e5);return n<=0?'Due today':n==1?'Due tomorrow':n+' days left'};
+const done=q=>{const a=st[q.id]||{};return q.subs.every(s=>a[s.id])||(a.text||'').trim()};
+function render(){const V=Q.filter(q=>!sent.includes(q.id)).sort((a,b)=>(a.urg=='High'?0:1)-(b.urg=='High'?0:1));
+ $('qcCount').textContent=V.length+' open, '+V.filter(q=>q.urg=='High').length+' urgent';
+ $('qcList').innerHTML=V.map(q=>{const a=st[q.id]||{};return '<div class="qcc'+(done(q)?' ok':'')+'" data-q="'+q.id+'"><h3>'+e(q.title)+' <span class="qpill'+(q.urg=='High'?' hi':'')+'">'+(q.urg=='High'?'Urgent':'Normal')+'</span></h3>'+
+ (q.rem?'<span class="qrem">'+e(q.rem)+' &middot; '+days(q.due)+'</span>':'')+
+ q.subs.map(s=>'<div class="qsub"><b>'+e(s.t)+'</b><small>'+e(s.d)+'</small><div class="qbs" data-s="'+s.id+'">'+s.o.concat(['Ask for more detail']).map(o=>'<button type="button" class="mw-hover'+(o=='Ask for more detail'?' det':'')+(a[s.id]==o?' on':'')+'" data-v="'+e(o)+'" aria-pressed="'+(a[s.id]==o)+'">'+e(o)+'</button>').join('')+'</div></div>').join('')+
+ '<div class="qbs" data-s="_q"><button type="button" class="mw-hover det'+(a._q?' on':'')+'" data-v="Ask for more detail" aria-pressed="'+!!a._q+'">Ask for more detail</button></div>'+
+ '<textarea aria-label="Type an answer for '+e(q.title)+'" placeholder="Or type your answer">'+e(a.text||'')+'</textarea>'+
+ '<div class="qft"><button type="button" class="qnote">+ Note</button><button type="button" class="qsend mw-hover">Send</button></div>'+
+ '<textarea class="qn" aria-label="Note" placeholder="Note"'+(a.note?'':' hidden')+'>'+e(a.note||'')+'</textarea></div>'}).join('');
+ $('qcAll').hidden=!V.length}
+async function send(ids){const ans=ids.map(id=>{const q=Q.find(x=>x.id==id);return{id,title:q.title,answers:st[id]||{}}}).filter(x=>Object.keys(x.answers).length);
+ if(!ans.length){$('qcMsg').textContent='Nothing answered yet.';return}
+ const ok=window.MWSubmit?await MWSubmit.send({agent:'security',app:'security-dashboard',deck:'questions-center',results:{answers:ans},notes:ans.map(x=>x.title).join('; ')}):false;
+ if(!ok&&window.MWSubmit&&MWSubmit.blocked){$('qcMsg').textContent='Not sent. Password needed.';return}
+ ans.forEach(x=>sent.push(x.id));sv();render();$('qcMsg').textContent='Sent'}
+$('qcList').addEventListener('click',ev=>{const c=ev.target.closest('.qcc');if(!c)return;const id=c.dataset.q;st[id]=st[id]||{};
+ const b=ev.target.closest('.qbs button');if(b){const s=b.parentNode.dataset.s;st[id][s]=st[id][s]==b.dataset.v?undefined:b.dataset.v;sv();render();return}
+ if(ev.target.closest('.qnote')){c.querySelector('.qn').hidden=false;c.querySelector('.qn').focus();return}
+ if(ev.target.closest('.qsend'))send([id])});
+$('qcList').addEventListener('input',ev=>{const c=ev.target.closest('.qcc');const id=c.dataset.q;st[id]=st[id]||{};st[id][ev.target.classList.contains('qn')?'note':'text']=ev.target.value;sv();c.classList.toggle('ok',!!done(Q.find(q=>q.id==id)))});
+$('qcAll').addEventListener('click',()=>send(Q.filter(q=>!sent.includes(q.id)).map(q=>q.id)));render()})();
+</script>
+</body></html>
