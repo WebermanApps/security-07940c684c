@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16 03:55 ICT",
+ "updated": "2026-10-16 06:45 ICT",
  "rule": "Any project Max has approved that still has work left stays in Ongoing Projects until it is finished (Max, Oct 15 2026 14:38 ICT). Maybe and No answers stay in the Questions Center. Finished projects drop off.",
  "projects": [
   {
@@ -51,7 +51,7 @@
    "id": "browser-signout",
    "name": "Shared-Browser Sign-Out",
    "tone": "amber",
-   "status": "Scheduled for Security Day, Thu Oct 16, 2026",
+   "status": "Scheduled for Security Day, Fri Oct 16, 2026",
    "next": "Sign out of every session the agents don't need on the shared computer's browser, keep only the logins agents use daily, and list what was signed out in the Morning Report.",
    "waiting": "Security",
    "approved": "Oct 14, 2026 (Max: Yes, sign out of unneeded sessions); scheduled Oct 15, 2026, 11:55 PM ICT"

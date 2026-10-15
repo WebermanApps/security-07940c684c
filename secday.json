@@ -1,0 +1,116 @@
+{
+ "updated": "2026-10-16 06:40 ICT",
+ "date": "Friday, Oct 16, 2026",
+ "title": "Security Day Checklist",
+ "intro": "Work top to bottom. The first three are where to start. Every step turns on two-step sign-in (2FA) as it goes, and every new password and 2FA code goes into 1Password. Never paste a password or code into a chat. Tap a step for who does what.",
+ "steps": [
+  {
+   "id": "vault",
+   "start": true,
+   "title": "Set Up 1Password As Your One Vault",
+   "max": "Sign up for 1Password, install it on your phone and computer, and print the Emergency Kit (it holds your Secret Key) and keep it somewhere safe at home. Make folders for Email, Apple, Code And Hosting, Money and Family.",
+   "team": "Security sends the folder layout and keeps a names-only list of what is in the vault (never the values).",
+   "fa": "Turn on 2FA for 1Password itself with a passkey or an authenticator app. This one code must live outside 1Password, so you can still get in if 1Password is locked. Every other 2FA code from here on is saved inside 1Password."
+  },
+  {
+   "id": "email",
+   "start": true,
+   "title": "Lock Your Email First",
+   "max": "Give your Google account a new password made by 1Password. Check the recovery phone and recovery email are yours, and sign out of any device you don't recognize. Email comes first because every other reset goes through it.",
+   "team": "Security marks email Locked on the control list and re-checks the recovery settings with you.",
+   "fa": "Add a passkey, plus an authenticator code saved in 1Password as the backup. Print the backup codes and keep them offline. Turn off text-message codes if Google offers it."
+  },
+  {
+   "id": "github",
+   "start": true,
+   "title": "GitHub: 2FA, Then GitHub Pro",
+   "max": "New 1Password password and 2FA on both GitHub logins (Machan1001 and WebermanApps). Then upgrade WebermanApps to GitHub Pro ($4 a month) so the repos can go private.",
+   "team": "After Pro is on, UpKeep and Security switch repos to private one at a time, starting with the smartupkeep.ai build, and check each live page still opens after its switch. Niko's four apps (Home Guide, Finish Questions, Room Photos, Room Quiz) are not touched and stay public. Going private also hides the old passwords left in the repo history.",
+   "fa": "Passkey plus an authenticator code saved in 1Password. Save the GitHub recovery codes offline."
+  },
+  {
+   "id": "apple",
+   "title": "Apple ID",
+   "max": "New 1Password password. Check the trusted devices and remove any you don't use. Apple Card sits behind this account, so it is covered here too.",
+   "team": "Security marks Apple ID and Apple Card on the control list.",
+   "fa": "Make sure two-factor is on (Apple usually has it on already). Optional but strong: add two Apple security keys. Print the recovery key, or skip the recovery key if you are not sure you can keep it safe."
+  },
+  {
+   "id": "money",
+   "title": "Money Accounts",
+   "max": "One at a time: Schwab, Kraken, PNC, SNB, Wise, both Amex logins, both Capital One logins, Chase, Northpointe and Venmo. Give each a new 1Password password, set up its 2FA, and save it in the Money folder. Also add a port-out PIN with your phone carrier so nobody can steal your number.",
+   "team": "No agent ever signs in to a money account. Security tracks only Done or Not Done per account and sends the credit freeze steps for the three credit bureaus when you are ready.",
+   "fa": "Use a passkey or app approval wherever it is offered and avoid text-message codes, because those can be stolen with a SIM swap, especially while you are abroad. Kraken: also turn on its Master Key and Global Settings Lock."
+  },
+  {
+   "id": "hosting",
+   "title": "Cloudflare, Netlify And Dropbox Logins",
+   "max": "Make or open these accounts and give each a new 1Password password: Cloudflare (needed for the central login below), Netlify and Dropbox.",
+   "team": "Security checks each one off on the control list.",
+   "fa": "Authenticator code or passkey on all three, saved in 1Password, recovery codes printed."
+  },
+  {
+   "id": "rotate",
+   "title": "Change The Passwords That Were Exposed",
+   "max": "Say Yes to Rotate Exposed Passwords in the Questions Center below. Live apps still need your separate OK: Niko's Home Guide password only changes if you say so. Change the Mellow Wood lockbox code at your next visit.",
+   "team": "1Password makes each new password. Portfolio gets its own new password, separate from the smartupkeep.ai gate. UpKeep changes the smartupkeep.ai gate passwords. The shared page password stays as the lock until the central login replaces it. Agents read new passwords from the private file on the box, never from chat.",
+   "fa": "No new 2FA here. This step clears out the old passwords that were found in shared files."
+  },
+  {
+   "id": "login",
+   "title": "One Central Login With A One-Time Code",
+   "max": "Say Yes to the Cloudflare login in the Questions Center, and pick one web address for your private pages (for example a subdomain of a domain you own), because Cloudflare can only guard pages on your own domain, not on github.io.",
+   "team": "UpKeep sets up Cloudflare Access on smartupkeep.ai first (free for up to 50 people), with you, Brett and anyone you name allowed in. Each person signs in with a one-time code sent to their email. When it works there, Security and Grok Bot move the dashboards and decks behind it and only then retire the shared page password. Niko's apps stay public.",
+   "fa": "This is 2FA on the central login itself: every sign-in needs the emailed one-time code, so a leaked password alone is no longer enough."
+  },
+  {
+   "id": "tokens",
+   "title": "Give Each Agent Its Own GitHub Key",
+   "max": "On WebermanApps, create one key per agent (GitHub calls them fine-grained tokens), each limited to that agent's own repos and expiring in 90 days. Only the account owner can create them. Security walks you through handing them to the box without putting them in a chat.",
+   "team": "Security and Grok Bot test each agent's publishing with its own key. When all pass, you OK retiring the one shared login. Then a rule blocks anyone from deleting or force-overwriting the main branch.",
+   "fa": "The keys sit behind your GitHub 2FA from the GitHub step. A reminder goes out two weeks before they expire."
+  },
+  {
+   "id": "netlify",
+   "title": "Take Down The Old Netlify Copies",
+   "max": "Confirm each copy in the Questions Center: the Akiya copy, the Walk copy and the Japan House Crew copy, plus the old public strategy-memo repo.",
+   "team": "Security takes down each confirmed copy and checks it is gone. The Walk copy comes down only after checking nobody still uses it as the Walk-Through. Careful: the Japan House Crew app on GitHub still uses that Netlify site for its saved data, so Security removes only the public page and keeps that data link working, or moves it first.",
+   "fa": "Done in your Netlify account from the logins step, which now has 2FA."
+  },
+  {
+   "id": "dropbox",
+   "title": "Lock Down Dropbox",
+   "max": "Finish your upload (you said Maybe until then). The reminder is set for Mon Oct 20, 2026, with a Done Uploading, Lock It Down button.",
+   "team": "After your OK, Security reviews shared links and removes any that are open to anyone, and lists what changed.",
+   "fa": "Dropbox 2FA is on from the logins step. Security also checks the list of linked apps and devices."
+  },
+  {
+   "id": "backups",
+   "title": "Back Up Everything",
+   "max": "Pick where the cloud copy goes (Dropbox or a dedicated backup service; Security suggests one in your next deck) and get a 1 TB external SSD for a second copy.",
+   "team": "Security sets up an encrypted cloud backup of the computer (about 43 GB) plus an encrypted copy on the SSD, then checks the backup every week.",
+   "fa": "The backup service account gets its own 1Password password and 2FA. The encryption key is saved in 1Password and printed with your recovery codes."
+  },
+  {
+   "id": "offline",
+   "title": "Check What smartupkeep.ai Keeps On Phones",
+   "max": "Nothing yet. If you open smartupkeep.ai on a phone that isn't yours, don't tick Remember Me.",
+   "team": "First look done today: the site has no offline app copy (no service worker). It does keep two things in the phone's browser storage: the Remember Me unlock key and sign-up progress. Security confirms this on a real phone, then UpKeep makes Remember Me expire and makes sure no member details are stored on the phone before real members sign up.",
+   "fa": "When real member accounts arrive, they get their own 2FA."
+  },
+  {
+   "id": "niko",
+   "title": "Test Submit On Niko's Apps",
+   "max": "Ask someone who has the submit password (Niko, or you) to send one test answer from one of Niko's apps, such as Finish Questions.",
+   "team": "Construction and Security check the test reached the inbox. Nothing in Niko's apps is changed.",
+   "fa": "No change to Niko's apps. This only proves they still work after last night's lock-up of the other pages."
+  },
+  {
+   "id": "control",
+   "title": "One Central Control Spot",
+   "max": "Bookmark Apps Home and this Security dashboard on your phone. That is where you check everything from now on.",
+   "team": "Security adds a control list here showing every site and account with its lock status and its 2FA status (names only, no passwords), and Apps Home links to it. Security also signs out of every session the agents don't need on the shared computer's browser today, as planned, and lists what was signed out.",
+   "fa": "Each row shows 2FA On, Off or Not Checked, so you can see at a glance what is still open."
+  }
+ ]
+}
