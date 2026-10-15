@@ -27,7 +27,7 @@
    "url": "https://webermanapps.github.io/style-swipe/security-ready-1-1y35ol/",
    "total": 20,
    "topic": "security",
-   "blurb": "The 13 Round 2 password and safety cards plus 7 more on resets"
+   "blurb": "Passwords, 2FA per account and 1Password"
   },
   {
    "id": "security-ready-2",
@@ -35,7 +35,7 @@
    "url": "https://webermanapps.github.io/style-swipe/security-ready-2-4i13c7/",
    "total": 20,
    "topic": "security",
-   "blurb": "The 20 Round 3 cards: 2FA, real login, agent access and legal"
+   "blurb": "Page lock follow-ups, takedowns, Cloudflare and backups of the lock"
   },
   {
    "id": "security-ready-3",
@@ -43,7 +43,7 @@
    "url": "https://webermanapps.github.io/style-swipe/security-ready-3-z07upz/",
    "total": 20,
    "topic": "security",
-   "blurb": "2FA on money accounts, monthly checks, DNS and checkout"
+   "blurb": "Backups, agent tokens and offline copies"
   }
  ],
  "updated": "2026-10-15T23:26:48+07:00"

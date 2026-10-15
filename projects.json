@@ -1,9 +1,60 @@
-{"updated":"2026-10-15 14:40 ICT",
-"rule":"Any project Max has approved that still has work left stays in Ongoing Projects until it is finished (Max, Oct 15 2026 14:38 ICT). Maybe and No answers stay in the Questions Center. Finished projects drop off.",
-"projects":[
- {"id":"backups","name":"Back Up Everything","tone":"amber","status":"Plan ready, waiting on a storage choice","next":"Pick Dropbox or a dedicated backup service, then Security sets up an encrypted cloud backup of the computer (about forty GB). Optional: an encrypted external SSD as a second copy.","waiting":"Max","approved":"Oct 14, 2026 (Backups And A Monthly Review: Yes); started Oct 15, 2026, 2:37 PM ICT"},
- {"id":"lock-build","name":"Lock Down The Build","tone":"red","status":"Handed to UpKeep, plan ready, nothing changed yet","next":"Your OKs in the Questions Center: GitHub Pro, Cloudflare login, then each live repo going private and unique passwords.","waiting":"Max, then UpKeep","approved":"Oct 14, 2026 (Private Repos, Real Login, Unique Passwords: Yes)"},
- {"id":"old-copies","name":"Old Public Copies Takedown","tone":"amber","status":"Copies found and listed, nothing taken down","next":"Confirm each copy in the Questions Center, then Security takes it down.","waiting":"Max","approved":"Oct 14, 2026 (Take Down Old Public Copies: Yes)"},
- {"id":"pw-2fa","name":"Set Up 1Password And 2FA","tone":"amber","status":"Checklist sent, not started","next":"Set up 1Password, then turn on passkeys or 2FA using the 2FA Checklist and save recovery codes offline.","waiting":"Max","approved":"Oct 14, 2026 (Passkeys Or 2FA, Password Manager: Yes)"},
- {"id":"agent-gh","name":"Narrow Agent GitHub Access","tone":"amber","status":"Plan written with Grok Bot, shared login still in use","next":"Create per-agent expiring tokens limited to each agent's repos, test publishing, then retire the shared login.","waiting":"Max (tokens need the account owner)","approved":"Oct 14, 2026 (Narrow Agent GitHub Access: Yes)"}
-]}
+{
+ "updated": "2026-10-15 23:55 ICT",
+ "rule": "Any project Max has approved that still has work left stays in Ongoing Projects until it is finished (Max, Oct 15 2026 14:38 ICT). Maybe and No answers stay in the Questions Center. Finished projects drop off.",
+ "projects": [
+  {
+   "id": "backups",
+   "name": "Back Up Everything",
+   "tone": "amber",
+   "status": "Plan ready, waiting on a storage choice",
+   "next": "Pick Dropbox or a dedicated backup service, then Security sets up an encrypted cloud backup of the computer (about forty GB). Optional: an encrypted external SSD as a second copy.",
+   "waiting": "Max",
+   "approved": "Oct 14, 2026 (Backups And A Monthly Review: Yes); started Oct 15, 2026, 2:37 PM ICT"
+  },
+  {
+   "id": "lock-build",
+   "name": "Lock Down The Build",
+   "tone": "red",
+   "status": "Handed to UpKeep, plan ready, nothing changed yet",
+   "next": "Your OKs in the Questions Center: GitHub Pro, Cloudflare login, then each live repo going private and unique passwords.",
+   "waiting": "Max, then UpKeep",
+   "approved": "Oct 14, 2026 (Private Repos, Real Login, Unique Passwords: Yes)"
+  },
+  {
+   "id": "old-copies",
+   "name": "Old Public Copies Takedown",
+   "tone": "amber",
+   "status": "Copies found and listed, nothing taken down",
+   "next": "Confirm each copy in the Questions Center, then Security takes it down.",
+   "waiting": "Max",
+   "approved": "Oct 14, 2026 (Take Down Old Public Copies: Yes)"
+  },
+  {
+   "id": "pw-2fa",
+   "name": "Set Up 1Password And 2FA",
+   "tone": "amber",
+   "status": "Checklist sent, not started",
+   "next": "Set up 1Password, then turn on passkeys or 2FA using the 2FA Checklist and save recovery codes offline.",
+   "waiting": "Max",
+   "approved": "Oct 14, 2026 (Passkeys Or 2FA, Password Manager: Yes)"
+  },
+  {
+   "id": "agent-gh",
+   "name": "Narrow Agent GitHub Access",
+   "tone": "amber",
+   "status": "Plan written with Grok Bot, shared login still in use",
+   "next": "Create per-agent expiring tokens limited to each agent's repos, test publishing, then retire the shared login.",
+   "waiting": "Max (tokens need the account owner)",
+   "approved": "Oct 14, 2026 (Narrow Agent GitHub Access: Yes)"
+  },
+  {
+   "id": "browser-signout",
+   "name": "Shared-Browser Sign-Out",
+   "tone": "amber",
+   "status": "Scheduled for Security Day, Thu Oct 16, 2026",
+   "next": "Sign out of every session the agents don't need on the shared computer's browser, keep only the logins agents use daily, and list what was signed out in the Morning Report.",
+   "waiting": "Security",
+   "approved": "Oct 14, 2026 (Max: Yes, sign out of unneeded sessions); scheduled Oct 15, 2026, 11:55 PM ICT"
+  }
+ ]
+}

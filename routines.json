@@ -1,10 +1,10 @@
 {
- "updated": "2026-10-15 14:40 ICT",
+ "updated": "2026-10-15 23:55 ICT",
  "routines": [
   {
    "name": "Security Morning Run",
    "group": "Daily",
-   "schedule_plain": "Every Day At 4:37 AM ICT. Posts The Morning Report, Applies Deck Answers, Refills Decks, Scans For Exposed Passwords. Moves Every Approved, Unfinished Project Into Ongoing Projects (projects.json) And Drops Finished Ones. Reads The Newest Entries In /workspace/ops/team-sync/praise-log.md, And When Max Praises Security Adds One Line There The Same Day",
+   "schedule_plain": "Every Day At 4:37 AM ICT. Posts The Morning Report, Applies Deck Answers, Refills Decks, Scans For Exposed Passwords. Moves Every Approved, Unfinished Project Into Ongoing Projects (projects.json) And Drops Finished Ones. Reads The Newest Entries In /workspace/ops/team-sync/praise-log.md, And When Max Praises Security Adds One Line There The Same Day. At 4:55 AM ICT, After The Agents' 4:30-4:50 Runs, Sweeps Every Locked Site: Pulls Each Clone, Runs relock On Any Unlocked Page (Niko's Apps And Build Templates Skipped), Commits As Security And Pushes, Then Checks Each Live Page Shows The Password Form",
    "status": "on",
    "last_run": "Not Run Yet"
   },
