@@ -1,4 +1,26 @@
-{"updated":"2026-10-15 12:30 ICT","routines":[
- {"name":"Security Morning Run","group":"Daily","schedule_plain":"Every Day At 4:37 AM ICT. Posts The Morning Report, Applies Deck Answers, Refills Decks, Scans For Exposed Passwords","status":"on","last_run":"Not Run Yet"},
- {"name":"Weekly Exposure Check","group":"Weekly","schedule_plain":"Mondays At 9:17 AM ICT. Checks New Public Repos, Unchanged Passwords, 2FA And Open Handoffs","status":"on","last_run":"Not Run Yet"},
- {"name":"Monthly Security Review","group":"Monthly","schedule_plain":"1st Of Each Month At 9:49 AM ICT. Full Review And A Fresh 20-Card Deck","status":"on","last_run":"Not Run Yet"}]}
+{
+ "updated": "2026-10-15 14:40 ICT",
+ "routines": [
+  {
+   "name": "Security Morning Run",
+   "group": "Daily",
+   "schedule_plain": "Every Day At 4:37 AM ICT. Posts The Morning Report, Applies Deck Answers, Refills Decks, Scans For Exposed Passwords. Moves Every Approved, Unfinished Project Into Ongoing Projects (projects.json) And Drops Finished Ones",
+   "status": "on",
+   "last_run": "Not Run Yet"
+  },
+  {
+   "name": "Weekly Exposure Check",
+   "group": "Weekly",
+   "schedule_plain": "Mondays At 9:17 AM ICT. Checks New Public Repos, Unchanged Passwords, 2FA And Open Handoffs",
+   "status": "on",
+   "last_run": "Not Run Yet"
+  },
+  {
+   "name": "Monthly Security Review",
+   "group": "Monthly",
+   "schedule_plain": "1st Of Each Month At 9:49 AM ICT. Full Review And A Fresh 20-Card Deck",
+   "status": "on",
+   "last_run": "Not Run Yet"
+  }
+ ]
+}
