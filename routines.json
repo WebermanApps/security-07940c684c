@@ -4,7 +4,7 @@
   {
    "name": "Security Morning Run",
    "group": "Daily",
-   "schedule_plain": "Every Day At 4:37 AM ICT. Posts The Morning Report, Applies Deck Answers, Refills Decks, Scans For Exposed Passwords. Moves Every Approved, Unfinished Project Into Ongoing Projects (projects.json) And Drops Finished Ones",
+   "schedule_plain": "Every Day At 4:37 AM ICT. Posts The Morning Report, Applies Deck Answers, Refills Decks, Scans For Exposed Passwords. Moves Every Approved, Unfinished Project Into Ongoing Projects (projects.json) And Drops Finished Ones. Reads The Newest Entries In /workspace/ops/team-sync/praise-log.md, And When Max Praises Security Adds One Line There The Same Day",
    "status": "on",
    "last_run": "Not Run Yet"
   },
