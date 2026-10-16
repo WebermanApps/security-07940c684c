@@ -2,16 +2,6 @@
  "agent": "security",
  "decks": [
   {
-   "id": "security-dashboard-setup-deck",
-   "name": "Security Dashboard Setup Deck",
-   "url": "https://webermanapps.github.io/style-swipe/security-dashboard-setup-vo9p08/",
-   "total": 20,
-   "topic": "security",
-   "blurb": "How your Security dashboard is laid out: top, sections, phone",
-   "added": "2026-10-15T23:26:48+07:00",
-   "tag": "Dashboard"
-  },
-  {
    "id": "security-ready-1",
    "name": "Password Reset Deck",
    "url": "https://webermanapps.github.io/style-swipe/security-ready-1-1y35ol/",
@@ -36,7 +26,7 @@
    "blurb": "Backups, agent tokens and offline copies"
   }
  ],
- "updated": "2026-10-16T03:40:00+07:00",
+ "updated": "2026-10-16T23:30:00+07:00",
  "done": [
   {
    "id": "security-duties-deck",
@@ -48,6 +38,20 @@
     "11",
     "18"
    ]
+  }
+ ],
+ "unlisted": [
+  {
+   "id": "security-dashboard-setup-deck",
+   "name": "Security Dashboard Setup Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-dashboard-setup-vo9p08/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "How your Security dashboard is laid out: top, sections, phone",
+   "added": "2026-10-15T23:26:48+07:00",
+   "tag": "Dashboard",
+   "unlisted_from": "decks",
+   "unlisted_note": "Dashboard deck unlisted (Max Oct 16 2026 23:19 ICT: no dashboard decks unless he asks). Deck files/pages/votes kept."
   }
  ]
 }
