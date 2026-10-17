@@ -62,11 +62,9 @@ footer{text-align:center;padding:18px 16px calc(18px + env(safe-area-inset-botto
 <script>
 (() => {
   const BLOBS = {"main":{"s":"SdjAwvjlDFKCgpWacrNHJg==","i":"/Lm7PkYGqQxxBqz6","c":"aVm0MzOCFSAVFldqbF26TW8w","n":600000},"upkeep":{"s":"W8kXrFq+o5L7Lou6DkN08Q==","i":"cUXivt+eTrARpuj9","c":"yiqoRJ0mk8DuNRSCsuP6od94","n":600000}};
-  const BRETT_URL = "https://webermanapps.github.io/style-swipe/share-x3l9xcxc1eut/";
   const ROWS = [
     { id: 'main', label: 'Main dashboard password', kind: 'ok-blob', blob: BLOBS.main },
     { id: 'upkeep', label: 'UpKeep share password', kind: 'ok-blob', blob: BLOBS.upkeep },
-    { id: 'brett', label: 'Brett share password', kind: 'live-gate', url: BRETT_URL },
   ];
 
   const u = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
@@ -117,31 +115,6 @@ footer{text-align:center;padding:18px 16px calc(18px + env(safe-area-inset-botto
     return dec.decode(pt) === 'OK';
   }
 
-  async function tryDecryptGate(pw, D) {
-    const keyRaw = await derive(pw, D.s, D.n);
-    const key = await crypto.subtle.importKey('raw', keyRaw, 'AES-GCM', false, ['decrypt']);
-    await crypto.subtle.decrypt({ name: 'AES-GCM', iv: u(D.i) }, key, u(D.c));
-    return true;
-  }
-
-  let brettD = null;
-  let brettPromise = null;
-  async function loadBrettD() {
-    if (brettD) return brettD;
-    if (brettPromise) return brettPromise;
-    brettPromise = (async () => {
-      const res = await fetch(BRETT_URL, { cache: 'no-store' });
-      if (!res.ok) throw new Error('fetch ' + res.status);
-      const html = await res.text();
-      const m = html.match(/const D=(\{.*?\}),K='shareKey_[\w-]+'/s);
-      if (!m) throw new Error('gate not found');
-      brettD = JSON.parse(m[1]);
-      return brettD;
-    })();
-    try { return await brettPromise; }
-    finally { /* keep cache */ }
-  }
-
   let seq = 0;
   let timer = null;
 
@@ -157,9 +130,6 @@ footer{text-align:center;padding:18px 16px calc(18px + env(safe-area-inset-botto
     for (const r of ROWS) setRow(r.id, 'busy', 'Checking…');
     msgEl.textContent = 'Checking…';
 
-    // Prefetch Brett gate in parallel with first row work
-    const brettLoad = loadBrettD().catch(e => ({ __err: e }));
-
     for (const r of ROWS) {
       if (my !== seq) return;
       let ok = false;
@@ -167,12 +137,6 @@ footer{text-align:center;padding:18px 16px calc(18px + env(safe-area-inset-botto
         if (r.kind === 'ok-blob') {
           for (const pv of cs) {
             try { if (await tryDecryptOk(pv, r.blob)) { ok = true; break; } } catch (_) {}
-          }
-        } else if (r.kind === 'live-gate') {
-          const D = await brettLoad;
-          if (D && D.__err) throw D.__err;
-          for (const pv of cs) {
-            try { if (await tryDecryptGate(pv, D)) { ok = true; break; } } catch (_) {}
           }
         }
       } catch (e) {
