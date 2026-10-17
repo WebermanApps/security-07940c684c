@@ -2,31 +2,73 @@
  "agent": "security",
  "decks": [
   {
-   "id": "security-ready-1",
-   "name": "Password Reset Deck",
-   "url": "https://webermanapps.github.io/style-swipe/security-ready-1-1y35ol/",
-   "total": 20,
+   "id": "security-ready-1-phone-money-travel",
+   "name": "Password Reset: Phone, Money & Travel",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-1-phone-money-travel-ljc7fc/",
+   "total": 10,
    "topic": "security",
-   "blurb": "Passwords, 2FA per account and 1Password"
+   "answered": 0,
+   "added": "2026-10-17T08:05:35+07:00",
+   "split_from": "security-ready-1",
+   "blurb": "10 cards, ready now"
   },
   {
-   "id": "security-ready-2",
-   "name": "Protection Deck",
-   "url": "https://webermanapps.github.io/style-swipe/security-ready-2-4i13c7/",
-   "total": 20,
+   "id": "security-ready-1-passwords-2fa",
+   "name": "Password Reset: Passwords & 2FA",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-1-passwords-2fa-lfjyce/",
+   "total": 10,
    "topic": "security",
-   "blurb": "Page lock follow-ups, takedowns, Cloudflare and backups of the lock"
+   "answered": 0,
+   "added": "2026-10-17T08:05:35+07:00",
+   "split_from": "security-ready-1",
+   "blurb": "10 cards, ready now"
   },
   {
-   "id": "security-ready-3",
-   "name": "Data And Accounts Deck",
-   "url": "https://webermanapps.github.io/style-swipe/security-ready-3-z07upz/",
-   "total": 20,
+   "id": "security-ready-2-backups-accounts",
+   "name": "Protection: Backups & Accounts",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-2-backups-accounts-jf4hgs/",
+   "total": 10,
    "topic": "security",
-   "blurb": "Backups, agent tokens and offline copies"
+   "answered": 0,
+   "added": "2026-10-17T08:05:35+07:00",
+   "split_from": "security-ready-2",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "security-ready-2-payments-sites-data",
+   "name": "Protection: Payments, Sites & Data",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-2-payments-sites-data-7gcm87/",
+   "total": 10,
+   "topic": "security",
+   "answered": 0,
+   "added": "2026-10-17T08:05:35+07:00",
+   "split_from": "security-ready-2",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "security-ready-3-logins-keys",
+   "name": "Data And Accounts: Logins & Keys",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-3-logins-keys-t8kknf/",
+   "total": 10,
+   "topic": "security",
+   "answered": 0,
+   "added": "2026-10-17T08:05:35+07:00",
+   "split_from": "security-ready-3",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "security-ready-3-backups-logs-domains",
+   "name": "Data And Accounts: Backups, Logs & Domains",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-3-backups-logs-domains-by3yyy/",
+   "total": 10,
+   "topic": "security",
+   "answered": 0,
+   "added": "2026-10-17T08:05:35+07:00",
+   "split_from": "security-ready-3",
+   "blurb": "10 cards, ready now"
   }
  ],
- "updated": "2026-10-16T23:30:00+07:00",
+ "updated": "2026-10-17T08:05:35+07:00",
  "done": [
   {
    "id": "security-duties-deck",
@@ -52,6 +94,52 @@
    "tag": "Dashboard",
    "unlisted_from": "decks",
    "unlisted_note": "Dashboard deck unlisted (Max Oct 16 2026 23:19 ICT: no dashboard decks unless he asks). Deck files/pages/votes kept."
+  },
+  {
+   "id": "security-ready-1",
+   "name": "Password Reset Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-1-1y35ol/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "Passwords, 2FA per account and 1Password",
+   "unlisted_at": "2026-10-17T08:05:35+07:00",
+   "split_into": [
+    "security-ready-1-phone-money-travel",
+    "security-ready-1-passwords-2fa"
+   ],
+   "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
+  },
+  {
+   "id": "security-ready-2",
+   "name": "Protection Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-2-4i13c7/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "Page lock follow-ups, takedowns, Cloudflare and backups of the lock",
+   "unlisted_at": "2026-10-17T08:05:35+07:00",
+   "split_into": [
+    "security-ready-2-backups-accounts",
+    "security-ready-2-payments-sites-data"
+   ],
+   "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
+  },
+  {
+   "id": "security-ready-3",
+   "name": "Data And Accounts Deck",
+   "url": "https://webermanapps.github.io/style-swipe/security-ready-3-z07upz/",
+   "total": 20,
+   "topic": "security",
+   "blurb": "Backups, agent tokens and offline copies",
+   "unlisted_at": "2026-10-17T08:05:35+07:00",
+   "split_into": [
+    "security-ready-3-logins-keys",
+    "security-ready-3-backups-logs-domains"
+   ],
+   "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
   }
- ]
+ ],
+ "cap": 10,
+ "cap_note": "R86 (Max Oct 17 2026 07:50 ICT): every shelf shows up to 10 decks (pinned included), 10 picks per deck; in-progress first, done last (kit deck-shelf.js sort)",
+ "held": [],
+ "queued": []
 }
