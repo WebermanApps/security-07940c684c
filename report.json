@@ -1,23 +1,8 @@
 {
  "agent": "Security",
  "type": "Morning Report",
- "postedAt": "Oct 15, 2026 · 07:26 ICT",
- "postedAtISO": "2026-10-15T07:26:00+07:00",
- "late": true,
- "lines": [
-  {
-   "category": "Working On",
-   "lines": [
-    "Watching for your deck submissions; refill a deck as soon as you submit it.",
-    "Tracking the handoffs: UpKeep has private repos and Cloudflare login, Legal has trademark and insurance, Grok Bot has the submit points."
-   ]
-  },
-  {
-   "category": "Waiting On Max",
-   "lines": [
-    "3 ready decks: Password Reset, Protection, Data And Accounts.",
-    "1Password setup, 2FA checklist, Dropbox upload finish."
-   ]
-  }
- ]
+ "postedAt": "",
+ "postedAtISO": "",
+ "late": false,
+ "lines": []
 }
